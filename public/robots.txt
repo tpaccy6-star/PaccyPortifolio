@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tuyiringire-pacifique.com/sitemap.xml
+Sitemap: https://paccyportifolio.vercel.app/sitemap.xml
