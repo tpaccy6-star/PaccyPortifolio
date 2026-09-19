@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Github } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export const Hero = () => {
   const mouseX = useMotionValue(0);
