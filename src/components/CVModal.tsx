@@ -1,6 +1,7 @@
 import React from 'react';
-import { X, Printer, Mail, Phone, MapPin, Github } from 'lucide-react';
+import { X, Printer, Mail, Phone, MapPin, Github, Download, FileCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { playKeyClick } from '../utils/audio';
 
 interface CVModalProps {
   isOpen: boolean;
@@ -33,19 +34,39 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
         >
           {/* Header Controls */}
           <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 pb-4 sm:pb-6 border-b border-slate-800 mb-6">
-            <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-widest">
-              Curriculum Vitae Preview • TUYIRINGIRE Pacifique
-            </span>
-            <div className="flex items-center gap-3 self-end sm:self-auto">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-widest">
+                Curriculum Vitae • TUYIRINGIRE Pacifique
+              </span>
+              <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-mono border border-emerald-500/20">
+                <FileCheck size={11} /> PDF Ready
+              </span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 self-end sm:self-auto">
+              <a
+                href="/TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf"
+                download="TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf"
+                onClick={() => playKeyClick()}
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-xs font-bold text-white shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
+                title="Directly download official PDF"
+              >
+                <Download size={14} className="animate-pulse" />
+                <span>Quick Download PDF</span>
+              </a>
+
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-xs font-bold text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition-colors"
+                title="Print or save via browser PDF dialog"
               >
                 <Printer size={14} /> Print / Save PDF
               </button>
+
               <button 
                 onClick={onClose}
                 className="p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white transition-colors"
+                aria-label="Close modal"
               >
                 <X size={18} />
               </button>
@@ -165,13 +186,30 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
           </div>
 
-          <div className="mt-6 flex justify-end">
-            <button
-              onClick={onClose}
-              className="px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sm font-semibold text-white transition-colors"
-            >
-              Close CV Preview
-            </button>
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800">
+            <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Official ATS-Formatted A4 PDF Document (2 Pages)</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto justify-end">
+              <a
+                href="/TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf"
+                download="TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf"
+                onClick={() => playKeyClick()}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-xs font-bold text-white shadow-lg shadow-emerald-600/25 transition-all hover:-translate-y-0.5 w-full sm:w-auto"
+              >
+                <Download size={15} />
+                <span>Quick Download CV (PDF)</span>
+              </a>
+
+              <button
+                onClick={onClose}
+                className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors w-full sm:w-auto text-center"
+              >
+                Close Preview
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

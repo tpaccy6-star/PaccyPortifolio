@@ -173,10 +173,10 @@ export const Hero = () => {
                 playKeyClick();
                 setIsCVModalOpen(true);
               }}
-              className="inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-300 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700 hover:text-white transition-all hover:-translate-y-0.5 w-full sm:w-auto"
+              className="inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-300 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700 hover:text-white transition-all hover:-translate-y-0.5 w-full sm:w-auto group"
             >
-              <Download size={16} className="mr-2" />
-              Download CV
+              <Download size={16} className="mr-2 text-emerald-400 group-hover:scale-110 transition-transform" />
+              Download CV (PDF)
             </button>
           </div>
 

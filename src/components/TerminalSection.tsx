@@ -8,7 +8,7 @@ interface CommandOutput {
   output: React.ReactNode;
 }
 
-const QUICK_COMMANDS = ['about', 'teaching', 'projects', 'fluentedge', 'problems', 'research', 'skills', 'leadership', 'matrix', 'clear'];
+const QUICK_COMMANDS = ['cv', 'about', 'teaching', 'projects', 'fluentedge', 'problems', 'research', 'skills', 'leadership', 'matrix', 'clear'];
 
 export const TerminalSection = () => {
   const [input, setInput] = useState('');
@@ -24,17 +24,18 @@ export const TerminalSection = () => {
         <div className="text-slate-300 text-xs sm:text-sm">
           <p className="text-primary-400 font-bold mb-2">Available Terminal Commands:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
-            <div><span className="text-emerald-400 font-bold font-mono">about</span>      - Bio & Core Identities</div>
-            <div><span className="text-emerald-400 font-bold font-mono">teaching</span>   - Practicum & GS Muhororo Case</div>
-            <div><span className="text-emerald-400 font-bold font-mono">projects</span>   - Selected Software Systems</div>
-            <div><span className="text-emerald-400 font-bold font-mono">fluentedge</span> - Learning Hub & CEFR Cert</div>
-            <div><span className="text-emerald-400 font-bold font-mono">problems</span>   - Problems I Want to Solve</div>
-            <div><span className="text-emerald-400 font-bold font-mono">research</span>   - Agricultural Welfare Study</div>
-            <div><span className="text-emerald-400 font-bold font-mono">skills</span>     - CS & Full-Stack Toolchain</div>
-            <div><span className="text-emerald-400 font-bold font-mono">leadership</span> - Choir, Faith & Community</div>
-            <div><span className="text-emerald-400 font-bold font-mono">matrix</span>     - Interactive Matrix Effect</div>
-            <div><span className="text-emerald-400 font-bold font-mono">contact</span>    - Direct Reach Channels</div>
-            <div><span className="text-emerald-400 font-bold font-mono">clear</span>      - Clear terminal screen</div>
+            <div><span className="text-emerald-400 font-bold font-mono">cv</span>          - Quick Download CV / Resume</div>
+            <div><span className="text-emerald-400 font-bold font-mono">about</span>       - Bio & Core Identities</div>
+            <div><span className="text-emerald-400 font-bold font-mono">teaching</span>    - Practicum & GS Muhororo Case</div>
+            <div><span className="text-emerald-400 font-bold font-mono">projects</span>    - Selected Software Systems</div>
+            <div><span className="text-emerald-400 font-bold font-mono">fluentedge</span>  - Learning Hub & CEFR Cert</div>
+            <div><span className="text-emerald-400 font-bold font-mono">problems</span>    - Problems I Want to Solve</div>
+            <div><span className="text-emerald-400 font-bold font-mono">research</span>    - Agricultural Welfare Study</div>
+            <div><span className="text-emerald-400 font-bold font-mono">skills</span>      - CS & Full-Stack Toolchain</div>
+            <div><span className="text-emerald-400 font-bold font-mono">leadership</span>  - Choir, Faith & Community</div>
+            <div><span className="text-emerald-400 font-bold font-mono">matrix</span>      - Interactive Matrix Effect</div>
+            <div><span className="text-emerald-400 font-bold font-mono">contact</span>     - Direct Reach Channels</div>
+            <div><span className="text-emerald-400 font-bold font-mono">clear</span>       - Clear terminal screen</div>
           </div>
         </div>
       ),
@@ -57,22 +58,42 @@ export const TerminalSection = () => {
     let output: React.ReactNode = null;
 
     switch (cmd) {
+      case 'cv':
+      case 'resume':
+      case 'download':
+        output = (
+          <div className="text-slate-300 text-xs sm:text-sm space-y-2">
+            <p className="text-emerald-400 font-bold">Curriculum Vitae — TUYIRINGIRE Pacifique (Paccy)</p>
+            <p className="text-slate-300">Computer Science Educator & Software Developer • University of Rwanda</p>
+            <div className="pt-1">
+              <a 
+                href="/TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf" 
+                download="TUYIRINGIRE_Pacifique_Curriculum_Vitae.pdf"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-md shadow-emerald-600/25"
+              >
+                📥 Download Official CV (PDF)
+              </a>
+            </div>
+          </div>
+        );
+        break;
       case 'help':
         output = (
           <div className="text-slate-300 text-xs sm:text-sm">
             <p className="text-primary-400 font-bold mb-2">Available Commands:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
-              <div><span className="text-emerald-400 font-bold font-mono">about</span>      - Bio & Core Identities</div>
-              <div><span className="text-emerald-400 font-bold font-mono">teaching</span>   - Practicum & GS Muhororo Case</div>
-              <div><span className="text-emerald-400 font-bold font-mono">projects</span>   - Selected Software Systems</div>
-              <div><span className="text-emerald-400 font-bold font-mono">fluentedge</span> - Learning Hub & CEFR Cert</div>
-              <div><span className="text-emerald-400 font-bold font-mono">problems</span>   - Problems I Want to Solve</div>
-              <div><span className="text-emerald-400 font-bold font-mono">research</span>   - Agricultural Welfare Study</div>
-              <div><span className="text-emerald-400 font-bold font-mono">skills</span>     - CS & Full-Stack Toolchain</div>
-              <div><span className="text-emerald-400 font-bold font-mono">leadership</span> - Choir, Faith & Community</div>
-              <div><span className="text-emerald-400 font-bold font-mono">matrix</span>     - Easter egg mode</div>
-              <div><span className="text-emerald-400 font-bold font-mono">contact</span>    - Direct Contact Channels</div>
-              <div><span className="text-emerald-400 font-bold font-mono">clear</span>      - Clear terminal screen</div>
+              <div><span className="text-emerald-400 font-bold font-mono">cv</span>          - Quick Download CV / Resume</div>
+              <div><span className="text-emerald-400 font-bold font-mono">about</span>       - Bio & Core Identities</div>
+              <div><span className="text-emerald-400 font-bold font-mono">teaching</span>    - Practicum & GS Muhororo Case</div>
+              <div><span className="text-emerald-400 font-bold font-mono">projects</span>    - Selected Software Systems</div>
+              <div><span className="text-emerald-400 font-bold font-mono">fluentedge</span>  - Learning Hub & CEFR Cert</div>
+              <div><span className="text-emerald-400 font-bold font-mono">problems</span>    - Problems I Want to Solve</div>
+              <div><span className="text-emerald-400 font-bold font-mono">research</span>    - Agricultural Welfare Study</div>
+              <div><span className="text-emerald-400 font-bold font-mono">skills</span>      - CS & Full-Stack Toolchain</div>
+              <div><span className="text-emerald-400 font-bold font-mono">leadership</span>  - Choir, Faith & Community</div>
+              <div><span className="text-emerald-400 font-bold font-mono">matrix</span>      - Easter egg mode</div>
+              <div><span className="text-emerald-400 font-bold font-mono">contact</span>     - Direct Contact Channels</div>
+              <div><span className="text-emerald-400 font-bold font-mono">clear</span>       - Clear terminal screen</div>
             </div>
           </div>
         );
