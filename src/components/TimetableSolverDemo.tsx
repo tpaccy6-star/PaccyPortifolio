@@ -19,7 +19,7 @@ export const TimetableSolverDemo = () => {
   };
 
   return (
-    <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-cyan-500/30 text-slate-100">
+    <div className="glass-panel p-4 sm:p-8 rounded-3xl border border-cyan-500/30 text-slate-100">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
         <div>
           <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest block mb-1">
@@ -55,7 +55,7 @@ export const TimetableSolverDemo = () => {
       </div>
 
       {/* Status Banner */}
-      <div className={`p-4 rounded-2xl mb-6 flex items-center justify-between transition-colors ${
+      <div className={`p-4 rounded-2xl mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-colors ${
         isResolved 
           ? 'bg-emerald-950/50 border border-emerald-500/50 text-emerald-300' 
           : 'bg-red-950/50 border border-red-500/50 text-red-300'

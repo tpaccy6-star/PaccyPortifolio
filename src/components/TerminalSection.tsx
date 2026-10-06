@@ -295,15 +295,15 @@ export const TerminalSection = () => {
           </div>
 
           {/* Quick Command Autocomplete Bar */}
-          <div className="px-4 py-2.5 bg-[#0d121b] border-t border-slate-800/80 flex flex-wrap items-center gap-1.5 overflow-x-auto text-[11px] font-mono">
-            <span className="text-slate-500 mr-1 flex items-center gap-1 text-[10px]">
+          <div className="px-3 sm:px-4 py-2.5 bg-[#0d121b] border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto whitespace-nowrap text-[11px] font-mono touch-pan-x">
+            <span className="text-slate-500 mr-1 flex items-center gap-1 text-[10px] flex-shrink-0">
               <Sparkles size={11} className="text-primary-400" /> Quick:
             </span>
             {QUICK_COMMANDS.map(cmd => (
               <button
                 key={cmd}
                 onClick={() => executeCommand(cmd)}
-                className="px-2 py-0.5 rounded-md bg-slate-800/70 text-slate-300 hover:text-white hover:bg-primary-600/60 border border-slate-700/60 transition-colors"
+                className="px-2.5 py-1 rounded-md bg-slate-800/70 text-slate-300 hover:text-white hover:bg-primary-600/60 border border-slate-700/60 transition-colors flex-shrink-0"
               >
                 {cmd}
               </button>

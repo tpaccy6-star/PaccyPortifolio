@@ -19,15 +19,15 @@ export const Teaching = () => {
         />
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-10 sm:mb-12">
           <button
             onClick={() => {
               playKeyClick();
               setActiveTab("case-study");
             }}
-            className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
+            className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all w-full sm:w-auto ${
               activeTab === "case-study"
-                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
+                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-[1.02] sm:scale-105"
                 : "bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-700"
             }`}
           >
@@ -39,9 +39,9 @@ export const Teaching = () => {
               playKeyClick();
               setActiveTab("philosophy");
             }}
-            className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
+            className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all w-full sm:w-auto ${
               activeTab === "philosophy"
-                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
+                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-[1.02] sm:scale-105"
                 : "bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-700"
             }`}
           >
@@ -53,9 +53,9 @@ export const Teaching = () => {
               playKeyClick();
               setActiveTab("lessons");
             }}
-            className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
+            className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all w-full sm:w-auto ${
               activeTab === "lessons"
-                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
+                ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-[1.02] sm:scale-105"
                 : "bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-700"
             }`}
           >
@@ -76,7 +76,7 @@ export const Teaching = () => {
               className="space-y-8"
             >
               {/* Hero Banner for Case Study */}
-              <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-primary-500/30 relative overflow-hidden">
+              <div className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl border border-primary-500/30 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
                 
                 <div className="max-w-3xl">
@@ -174,8 +174,8 @@ export const Teaching = () => {
               className="space-y-8"
             >
               {/* Quote Banner */}
-              <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-purple-500/30 text-center max-w-4xl mx-auto">
-                <blockquote className="text-2xl sm:text-3xl font-extrabold text-white font-serif mb-4 leading-snug">
+              <div className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl border border-purple-500/30 text-center max-w-4xl mx-auto">
+                <blockquote className="text-xl sm:text-3xl font-extrabold text-white font-serif mb-4 leading-snug">
                   "{teachingPhilosophy.quote}"
                 </blockquote>
                 <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -249,7 +249,7 @@ export const Teaching = () => {
               </div>
 
               {/* Microteaching Feature Box */}
-              <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-primary-500/30 max-w-4xl mx-auto">
+              <div className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl border border-primary-500/30 max-w-4xl mx-auto">
                 <div className="flex items-center gap-3 text-primary-400 mb-3">
                   <Sparkles size={24} />
                   <span className="text-xs uppercase font-bold tracking-widest text-primary-300">

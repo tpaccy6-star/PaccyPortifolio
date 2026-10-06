@@ -16,7 +16,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 overflow-y-auto">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -29,14 +29,14 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-4xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-y-auto z-10 text-slate-100 p-6 sm:p-10"
+          className="relative w-full max-w-4xl max-h-[92vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-y-auto z-10 text-slate-100 p-4 sm:p-8 md:p-10"
         >
           {/* Header Controls */}
-          <div className="flex justify-between items-center pb-6 border-b border-slate-800 mb-6">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 pb-4 sm:pb-6 border-b border-slate-800 mb-6">
             <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-widest">
               Curriculum Vitae Preview • TUYIRINGIRE Pacifique
             </span>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 self-end sm:self-auto">
               <button
                 onClick={handlePrint}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-xs font-bold text-white transition-colors"
@@ -53,7 +53,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Printable CV Content */}
-          <div className="bg-slate-950/60 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-8 print:bg-white print:text-black">
+          <div className="bg-slate-950/60 p-4 sm:p-8 rounded-2xl border border-slate-800 space-y-8 print:bg-white print:text-black">
             
             {/* Header */}
             <div>

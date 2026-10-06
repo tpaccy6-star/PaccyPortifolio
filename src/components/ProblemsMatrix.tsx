@@ -60,22 +60,22 @@ export const ProblemsMatrix = () => {
         />
 
         {/* Development Philosophy Banner */}
-        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-primary-500/30 text-center max-w-4xl mx-auto mb-12 relative overflow-hidden">
+        <div className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl border border-primary-500/30 text-center max-w-4xl mx-auto mb-12 relative overflow-hidden">
           <div className="inline-flex p-3 rounded-full bg-primary-500/10 text-primary-400 mb-3">
             <Target size={28} />
           </div>
-          <blockquote className="text-xl sm:text-2xl font-bold font-serif text-white mb-6">
+          <blockquote className="text-lg sm:text-2xl font-bold font-serif text-white mb-6">
             "I don't want to build software simply because I can. I want to build software because there is a problem worth solving."
           </blockquote>
           
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold font-mono">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 text-xs sm:text-sm font-bold font-mono">
             {PHILOSOPHY_STEPS.map((step, idx) => (
-              <div key={step} className="flex items-center">
-                <span className="px-3 py-1.5 rounded-xl bg-slate-800 text-primary-300 border border-slate-700">
+              <div key={step} className="flex items-center my-0.5">
+                <span className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-800 text-primary-300 border border-slate-700">
                   {step}
                 </span>
                 {idx < PHILOSOPHY_STEPS.length - 1 && (
-                  <ArrowRight size={14} className="text-slate-500 mx-1 sm:mx-1.5" />
+                  <ArrowRight size={13} className="text-slate-500 mx-1 sm:mx-1.5" />
                 )}
               </div>
             ))}

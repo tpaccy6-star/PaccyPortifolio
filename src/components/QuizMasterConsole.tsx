@@ -32,7 +32,7 @@ export const QuizMasterConsole = () => {
   };
 
   return (
-    <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-primary-500/30 text-slate-100">
+    <div className="glass-panel p-4 sm:p-8 rounded-3xl border border-primary-500/30 text-slate-100">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-800">
         <div>
           <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-widest block mb-1">
@@ -96,7 +96,7 @@ export const QuizMasterConsole = () => {
 
       {/* Progress Bar & Real-Time Stations Stream */}
       <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
-        <div className="flex justify-between items-center text-xs text-slate-300 mb-2 font-mono">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs text-slate-300 mb-2 font-mono gap-1">
           <span>Question #12: "Which disk scheduling algorithm avoids starvation?"</span>
           <span className="font-bold text-primary-400">{Math.round((submittedCount / 60) * 100)}% Submitted</span>
         </div>

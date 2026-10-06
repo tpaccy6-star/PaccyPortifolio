@@ -64,7 +64,7 @@ export const CertificateStudio = () => {
       </div>
 
       {/* Dynamic Certificate Preview Card */}
-      <div className="relative p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-amber-50 via-amber-100/90 to-yellow-50 border-4 border-amber-400 text-slate-900 shadow-2xl overflow-hidden print:p-8">
+      <div className="relative p-4 sm:p-8 md:p-12 rounded-3xl bg-gradient-to-br from-amber-50 via-amber-100/90 to-yellow-50 border-4 border-amber-400 text-slate-900 shadow-2xl overflow-hidden print:p-8">
         
         {/* Holographic Watermark Background */}
         <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
@@ -72,7 +72,7 @@ export const CertificateStudio = () => {
         </div>
 
         {/* Verification Pill */}
-        <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-[10px] font-mono font-bold">
+        <div className="sm:absolute sm:top-4 sm:right-4 mb-4 sm:mb-0 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-[10px] font-mono font-bold">
           <ShieldCheck size={12} className="text-emerald-600" />
           <span>VERIFIED ON FLUENTEDGE LEDGER</span>
         </div>
@@ -83,10 +83,10 @@ export const CertificateStudio = () => {
           </div>
 
           <div>
-            <h3 className="text-3xl sm:text-4xl font-extrabold font-serif text-slate-900 tracking-tight">
+            <h3 className="text-2xl sm:text-4xl font-extrabold font-serif text-slate-900 tracking-tight">
               FluentEdge Academy
             </h3>
-            <p className="text-xs tracking-widest font-bold text-amber-900 uppercase mt-1">
+            <p className="text-[11px] sm:text-xs tracking-widest font-bold text-amber-900 uppercase mt-1">
               Certificate of Completion • CEFR English Proficiency Award
             </p>
           </div>
@@ -95,13 +95,13 @@ export const CertificateStudio = () => {
             <p className="text-xs text-slate-600 uppercase tracking-widest font-semibold">
               This is to officially certify that
             </p>
-            <p className="text-2xl sm:text-3xl font-extrabold font-serif text-slate-950 underline decoration-amber-400 decoration-2 underline-offset-8">
+            <p className="text-xl sm:text-3xl font-extrabold font-serif text-slate-950 underline decoration-amber-400 decoration-2 underline-offset-8 break-words">
               {recipient || "Learner Name"}
             </p>
             <p className="text-xs text-slate-600 pt-2">
               has completed all levels, assessments, and continuous oral evaluation for
             </p>
-            <p className="text-lg font-bold text-purple-950 font-serif">
+            <p className="text-base sm:text-lg font-bold text-purple-950 font-serif">
               PROFESSIONAL ENGLISH 1 (A1)
             </p>
             <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold font-mono">
@@ -111,21 +111,21 @@ export const CertificateStudio = () => {
           </div>
 
           {/* Certificate Footer */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-end text-left pt-2 font-mono text-[10px] text-slate-600">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center sm:items-end text-center sm:text-left pt-2 font-mono text-[10px] text-slate-600">
             <div>
               <p className="uppercase text-slate-500 font-bold">Authorized By</p>
               <p className="font-bold text-slate-900 text-xs mt-0.5">TUYIRINGIRE Pacifique</p>
               <p className="text-[9px] text-slate-500">Founder & CS Educator</p>
             </div>
             
-            <div className="hidden sm:block text-center">
+            <div className="text-center">
               <div className="inline-block p-1 bg-white rounded border border-amber-200 shadow-sm">
                 <QrCode size={36} className="text-slate-800" />
               </div>
               <p className="text-[8px] text-slate-400 mt-0.5">Scan to verify</p>
             </div>
 
-            <div className="text-right">
+            <div className="sm:text-right text-center">
               <p className="uppercase text-slate-500 font-bold">Verification Hash</p>
               <p className="font-bold text-slate-900 text-[11px] mt-0.5">{verificationCode}</p>
               <p className="text-[9px] text-emerald-700 font-semibold">Status: Tamper-Proof</p>

@@ -16,7 +16,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div 
           initial={{ opacity: 0 }}
@@ -32,19 +32,19 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-4xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-y-auto z-10 text-slate-100 p-6 sm:p-8"
+          className="relative w-full max-w-4xl max-h-[90vh] bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl overflow-y-auto z-10 text-slate-100 p-4 sm:p-8"
         >
           {/* Close button */}
           <button 
             onClick={onClose}
-            className="absolute top-6 right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors z-20"
             aria-label="Close modal"
           >
             <X size={20} />
           </button>
 
           {/* Header */}
-          <div className="flex flex-wrap items-center gap-3 mb-3 pr-12">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 pr-10 sm:pr-12">
             <span className="px-3 py-1 text-xs font-bold rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30">
               {project.status}
             </span>
@@ -55,11 +55,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             ))}
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-2 font-serif">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-2 font-serif break-words">
             {project.name}
           </h2>
           {project.tagline && (
-            <p className="text-lg text-primary-400 font-medium mb-6">
+            <p className="text-base sm:text-lg text-primary-400 font-medium mb-6">
               {project.tagline}
             </p>
           )}
@@ -72,10 +72,10 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
-            <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2">
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Role</p>
-                <p className="text-sm font-semibold text-white">{project.role}</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-bold">Role</p>
+                <p className="text-xs sm:text-sm font-semibold text-white">{project.role}</p>
               </div>
               <div className="flex gap-3">
                 {project.githubUrl && (

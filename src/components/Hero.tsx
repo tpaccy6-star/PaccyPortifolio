@@ -105,23 +105,23 @@ export const Hero = () => {
           </div>
 
           {/* Main Name & Dynamic Typewriter Rotating Roles */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 tracking-tight break-words">
             <span className="block text-white font-serif">
               TUYIRINGIRE Pacifique
             </span>
-            <span className="block text-lg sm:text-xl text-slate-400 font-mono font-medium mt-1">
+            <span className="block text-base sm:text-xl text-slate-400 font-mono font-medium mt-1">
               (Preferred: <span className="text-primary-400 font-bold">Paccy</span>)
             </span>
             
             {/* Rotating Role with Smooth Transition */}
-            <span className="h-12 sm:h-14 block overflow-hidden mt-2">
+            <span className="min-h-[3.25rem] sm:min-h-[3.75rem] flex items-center overflow-hidden mt-2">
               <motion.span 
                 key={roleIndex}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-cyan-300 to-purple-400 font-serif font-bold"
+                className="block text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-cyan-300 to-purple-400 font-serif font-bold"
               >
                 {ROTATING_ROLES[roleIndex]}
               </motion.span>
@@ -129,7 +129,7 @@ export const Hero = () => {
           </h1>
 
           {/* Tagline */}
-          <blockquote className="text-base sm:text-lg font-serif italic text-primary-300/90 mb-5 border-l-2 border-primary-500 pl-4 py-0.5">
+          <blockquote className="text-sm sm:text-lg font-serif italic text-primary-300/90 mb-5 border-l-2 border-primary-500 pl-4 py-0.5">
             "Transforming Learning Through Passion and Technology"
           </blockquote>
 
@@ -155,7 +155,7 @@ export const Hero = () => {
             <a 
               href="#projects" 
               onClick={() => playKeyClick()}
-              className="group inline-flex items-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-cyan-600 hover:from-primary-500 hover:to-cyan-500 shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-cyan-600 hover:from-primary-500 hover:to-cyan-500 shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5 w-full sm:w-auto"
             >
               Explore Projects
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -163,7 +163,7 @@ export const Hero = () => {
             <a 
               href="#teaching" 
               onClick={() => playKeyClick()}
-              className="inline-flex items-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-primary-500/40 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-primary-500/40 transition-all hover:-translate-y-0.5 w-full sm:w-auto"
             >
               <Laptop size={16} className="mr-2 text-primary-400" />
               Teaching Practicum
@@ -173,7 +173,7 @@ export const Hero = () => {
                 playKeyClick();
                 setIsCVModalOpen(true);
               }}
-              className="inline-flex items-center px-5 sm:px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-300 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700 hover:text-white transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-5 sm:px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-300 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700 hover:text-white transition-all hover:-translate-y-0.5 w-full sm:w-auto"
             >
               <Download size={16} className="mr-2" />
               Download CV
@@ -181,7 +181,7 @@ export const Hero = () => {
           </div>
 
           {/* Quick Contact & Social Handles */}
-          <div className="flex flex-wrap items-center gap-6 text-xs text-slate-400 font-medium">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-400 font-medium">
             <a 
               href="https://github.com/tpaccy6-star" 
               target="_blank" 
@@ -218,13 +218,13 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="lg:col-span-5 relative"
+          className="lg:col-span-5 relative mt-6 lg:mt-0"
         >
           {/* Floating Pill Tag 1 */}
           <motion.div 
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-4 -left-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-primary-500/40 text-[11px] font-mono text-primary-300 shadow-xl backdrop-blur-md flex items-center gap-1.5"
+            className="absolute -top-4 left-2 sm:-left-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-primary-500/40 text-[11px] font-mono text-primary-300 shadow-xl backdrop-blur-md flex items-center gap-1.5"
           >
             <Code2 size={13} className="text-cyan-400" />
             <span>CBC Educator & C# / React</span>
@@ -234,7 +234,7 @@ export const Hero = () => {
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute top-1/3 -right-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-purple-500/40 text-[11px] font-mono text-purple-300 shadow-xl backdrop-blur-md flex items-center gap-1.5"
+            className="absolute top-1/3 right-2 sm:-right-4 z-20 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-purple-500/40 text-[11px] font-mono text-purple-300 shadow-xl backdrop-blur-md flex items-center gap-1.5"
           >
             <Sparkles size={13} className="text-purple-400" />
             <span>Mastercard SEF 2.0 Fellow</span>

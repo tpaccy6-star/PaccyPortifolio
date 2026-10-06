@@ -58,7 +58,7 @@ export const Projects = () => {
         />
 
         {/* Tier Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
+        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-8">
           {TABS.map(tab => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -70,9 +70,9 @@ export const Projects = () => {
                   setActiveTab(tab.id as any);
                   setFilterCategory("All");
                 }}
-                className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all duration-300 ${
+                className={`flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 w-full sm:w-auto ${
                   isActive 
-                    ? 'bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105' 
+                    ? 'bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-[1.02] sm:scale-105' 
                     : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-700 hover:border-primary-500/50'
                 }`}
               >

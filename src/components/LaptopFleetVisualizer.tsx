@@ -43,7 +43,7 @@ export const LaptopFleetVisualizer = () => {
   const ratio = (activeLearners / 6).toFixed(1);
 
   return (
-    <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-primary-500/40 relative overflow-hidden">
+    <div className="glass-panel p-4 sm:p-8 rounded-3xl border border-primary-500/40 relative overflow-hidden">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-800">
         <div>
@@ -59,7 +59,7 @@ export const LaptopFleetVisualizer = () => {
         </div>
 
         {/* Classroom scenario switcher */}
-        <div className="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-700">
+        <div className="flex flex-wrap items-center gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-700">
           <button
             onClick={() => setActiveScenario('s4')}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
@@ -120,9 +120,9 @@ export const LaptopFleetVisualizer = () => {
 
       {/* Fleet Grid (105 nodes) */}
       <div className="mb-6">
-        <div className="flex flex-wrap items-center justify-between text-xs text-slate-400 mb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400 mb-3 gap-2">
           <span className="font-bold text-slate-300">105 Positivo BGH Hardware Matrix:</span>
-          <div className="flex flex-wrap gap-3 text-[11px]">
+          <div className="flex flex-wrap gap-2 sm:gap-3 text-[11px]">
             <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" /> 6 Active Student Machines</span>
             <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-blue-400" /> 32 Teacher / Admin Laptops</span>
             <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-amber-400" /> 40 Battery/Power Faults</span>
@@ -130,7 +130,7 @@ export const LaptopFleetVisualizer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-15 sm:grid-cols-21 gap-1.5 p-4 rounded-2xl bg-slate-950/70 border border-slate-800 max-h-[160px] overflow-y-auto">
+        <div className="grid grid-cols-[repeat(7,minmax(0,1fr))] sm:grid-cols-[repeat(15,minmax(0,1fr))] md:grid-cols-[repeat(21,minmax(0,1fr))] gap-1.5 p-3 sm:p-4 rounded-2xl bg-slate-950/70 border border-slate-800 max-h-[180px] overflow-y-auto">
           {fleet.map((node) => {
             let color = 'bg-slate-700';
             if (node.status === 'student-active') color = 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] animate-pulse';
@@ -145,7 +145,7 @@ export const LaptopFleetVisualizer = () => {
                 key={node.id}
                 onClick={() => setSelectedNode(node)}
                 title={node.label}
-                className={`w-4 h-4 rounded-sm ${color} transition-all duration-200 hover:scale-150 ${
+                className={`aspect-square w-full max-w-[20px] mx-auto rounded-sm ${color} transition-all duration-200 hover:scale-150 ${
                   isSelected ? 'ring-2 ring-white scale-125 z-10' : ''
                 }`}
               />
@@ -176,8 +176,8 @@ export const LaptopFleetVisualizer = () => {
             </button>
           </motion.div>
         ) : (
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-primary-950/40 via-purple-950/30 to-slate-900 border border-primary-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2 text-slate-300">
+          <div className="p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-primary-950/40 via-purple-950/30 to-slate-900 border border-primary-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div className="flex items-start sm:items-center gap-2 text-slate-300">
               <CheckCircle2 size={16} className="text-primary-400 flex-shrink-0" />
               <span>
                 {activeScenario === 's4' 

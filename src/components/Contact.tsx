@@ -75,7 +75,7 @@ export const Contact = () => {
           className="lg:col-span-2 relative"
         >
           <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-purple-600 rounded-3xl blur opacity-20 dark:opacity-40"></div>
-          <form className="glass-panel p-8 rounded-2xl relative z-10">
+          <form className="glass-panel p-5 sm:p-8 rounded-2xl relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="group relative">
                 <label htmlFor="name" className="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider">Name</label>
