@@ -14,16 +14,16 @@ export const leadershipExperiences: LeadershipItem[] = [
     impact: "Cultivating Christian leadership, integrity, and servant stewardship within the university student community."
   },
   {
-    id: "lead-horeb-choir",
-    role: "Secretary",
-    organization: "Horeb Family Choir",
-    category: "Choir & Ministry",
+    id: "lead-student-governance",
+    role: "Student Representative & Academic Delegate",
+    organization: "University of Rwanda Student Union",
+    category: "Campus & Community",
     responsibilities: [
-      "Official organizational correspondence, documentation, and archival of choir proceedings",
-      "Event scheduling, rehearsal logistics, and cross-team communication for large choral events",
-      "Executive committee coordination, minutes documentation, and membership welfare records"
+      "Representing academic concerns and student welfare to department and faculty administration",
+      "Organizing student peer academic tutoring, examination prep sessions, and learning circles",
+      "Coordinating student advocacy initiatives, ethical conduct, and campus community service"
     ],
-    impact: "Maintained seamless operational clarity, structured communication, and disciplined organizational execution across extensive choir membership."
+    impact: "Advocated for peer learning access, transparent student welfare, and proactive academic representation."
   },
   {
     id: "lead-community-outreach",

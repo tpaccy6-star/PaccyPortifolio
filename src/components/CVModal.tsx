@@ -204,7 +204,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               <div>
                 <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-2">Leadership & Service</h2>
                 <p className="text-slate-300"><span className="text-white font-semibold">GBUR:</span> Active Member & Student Leader (Groupe Biblique Universitaire du Rwanda)</p>
-                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Horeb Family Choir:</span> Secretary (Archival & Organizational Logistics)</p>
+                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Student Governance:</span> University of Rwanda Student Union</p>
                 <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Community Outreach:</span> Nyagahandagaza Secondary School mentorship</p>
                 <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Bootcamps:</span> Mastercard Foundation SEF 2.0 / HATANA Fellow</p>
               </div>
