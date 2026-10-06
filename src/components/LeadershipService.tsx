@@ -77,11 +77,11 @@ export const LeadershipService = () => {
               Leading with Integrity, Vision & Service
             </h4>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-              From student governance representing academic peers at the University of Rwanda to leading youth biblical education at Christian Life Assembly (CLA) Remera, every leadership mandate is focused on mentorship, ethical accountability, and empowering others to thrive.
+              From student governance representing academic peers at the University of Rwanda to active leadership and ministry in GBUR (Groupe Biblique Universitaire du Rwanda), every leadership mandate is focused on mentorship, ethical accountability, and empowering others to thrive.
             </p>
             <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-400">
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">University of Rwanda Student Union</span>
-              <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">CLA Remera Youth Leadership</span>
+              <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">GBUR (Groupe Biblique Universitaire du Rwanda)</span>
               <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">Mentorship & Public Speaking</span>
             </div>
           </div>

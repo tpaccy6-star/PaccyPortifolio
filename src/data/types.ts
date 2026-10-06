@@ -41,11 +41,14 @@ export interface ExperienceItem {
   id: string;
   role: string;
   organization: string;
+  organizationUrl?: string;
   location?: string;
   period: string;
-  type: "Education & Teaching" | "Innovation & Bootcamp" | "Technical";
+  type: "Education & Teaching" | "Innovation & Bootcamp" | "Technical" | "Engineering Leadership";
   description: string[];
   highlights?: string[];
+  badge?: string;
+  image?: string;
 }
 
 export interface TeachingCaseStudy {
@@ -113,7 +116,7 @@ export interface LeadershipItem {
   role: string;
   organization: string;
   period?: string;
-  category: "Choir & Ministry" | "Campus & Community" | "Service";
+  category: "Choir & Ministry" | "Campus & Community" | "Service" | "Christian Ministry & Fellowship";
   responsibilities: string[];
   impact: string;
 }

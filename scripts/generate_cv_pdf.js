@@ -69,8 +69,21 @@ doc.moveDown(0.2);
 doc.fillColor(DARK).font('Helvetica-Bold').fontSize(8.5).text('Key Coursework: ', { continued: true });
 doc.font('Helvetica').text('Computer Science Pedagogy, Operating Systems, Algorithm Analysis & Design, Database Systems, Software Requirements (SRS), CBC Teaching Methodology, Educational Data Analytics.');
 
-// ---------------- TEACHING & PRACTICUM EXPERIENCE ----------------
-sectionHeading('Teaching & Practicum Experience');
+// ---------------- PROFESSIONAL & TEACHING EXPERIENCE ----------------
+sectionHeading('Professional & Teaching Experience');
+
+// NexaStack
+doc.fillColor(DARK).font('Helvetica-Bold').fontSize(10).text('Head of Developers (Engineering Lead)', { continued: true });
+doc.fillColor(MUTED).font('Helvetica').fontSize(8.5).text('   2024 – Present', { align: 'right' });
+doc.fillColor(PRIMARY).font('Helvetica-Bold').fontSize(9).text('NexaStack — https://www.nexastack.net/');
+doc.fillColor(SLATE).font('Helvetica').fontSize(8.5);
+doc.list([
+  'Lead engineering teams across full-stack delivery — owning code reviews, architecture decisions, and product releases.',
+  'Enforce software architecture standards, robust testing, CI/CD pipelines, and high-performance system delivery.',
+  'Provide technical mentorship and coordinate developer sprints delivering scalable web and mobile applications.'
+], { bulletRadius: 2, textIndent: 12 });
+
+doc.moveDown(0.3);
 
 // GS MUHORORO
 doc.fillColor(DARK).font('Helvetica-Bold').fontSize(10).text('Computer Science Teacher Intern', { continued: true });
@@ -85,14 +98,15 @@ doc.list([
 ], { bulletRadius: 2, textIndent: 12 });
 
 doc.moveDown(0.3);
-// IEE
-doc.fillColor(DARK).font('Helvetica-Bold').fontSize(10).text('Teaching Assistant (Practicum Fellow)', { continued: true });
+
+// GS KAMPANGA
+doc.fillColor(DARK).font('Helvetica-Bold').fontSize(10).text('Secondary School Teacher (Interim Cover)', { continued: true });
 doc.fillColor(MUTED).font('Helvetica').fontSize(8.5).text('   2023 – 2024', { align: 'right' });
-doc.fillColor(PRIMARY).font('Helvetica-Bold').fontSize(9).text('Inspire, Educate and Empower Rwanda (IEE)');
+doc.fillColor(PRIMARY).font('Helvetica-Bold').fontSize(9).text('GS KAMPANGA — Rulindo District, Northern Province');
 doc.fillColor(SLATE).font('Helvetica').fontSize(8.5);
 doc.list([
-  'Assisted secondary educators in classroom facilitation, remedial lesson design, and student-centered active learning methods.',
-  'Supported community-school digital literacy programs and foundational tech integration in rural education centers.'
+  'Graduated secondary education at GS KAMPANGA with Full NESA Aggregates (top national score) and was hired to replace former teacher on maternity leave.',
+  'Delivered secondary curriculum instruction, prepared and graded assessments, and maintained classroom management and academic continuity.'
 ], { bulletRadius: 2, textIndent: 12 });
 
 // ---------------- SOFTWARE ENGINEERING PROJECTS ----------------
@@ -156,6 +170,9 @@ doc.font('Helvetica').text('Selected for leadership, academic excellence, and co
 
 doc.font('Helvetica-Bold').text('Huye Hackathon 2024 Semi-Finalist: ', { continued: true });
 doc.font('Helvetica').text('Developed innovative social-impact tech solution addressing community bottlenecks under incubation mentorship.');
+
+doc.font('Helvetica-Bold').text('GBUR (Groupe Biblique Universitaire du Rwanda): ', { continued: true });
+doc.font('Helvetica').text('Active member & student leader coordinating Bible study cells, discipleship, integrity, and peer mentorship.');
 
 doc.font('Helvetica-Bold').text('Choir President & Conductor: ', { continued: true });
 doc.font('Helvetica').text('Christ the King Parish (Saint Paul Choir) — Directing 40+ vocalists, leading weekly rehearsals, logistics, and liturgical service.');

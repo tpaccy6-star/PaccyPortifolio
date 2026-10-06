@@ -35,6 +35,13 @@
       <image:caption>Professional formal portrait of TUYIRINGIRE Pacifique (Paccy), software developer, EdTech builder, and Mastercard Foundation SEF 2.0 Fellow in Kigali, Rwanda.</image:caption>
     </image:image>
 
+    <!-- NexaStack Head of Developers Portrait -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-nexastack-head-of-developers.jpg</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Head of Developers at NexaStack</image:title>
+      <image:caption>TUYIRINGIRE Pacifique official portrait as Head of Developers and Engineering Lead at NexaStack, leading development teams, code architecture, and full-stack feature delivery.</image:caption>
+    </image:image>
+
     <!-- Official Brand Logo -->
     <image:image>
       <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-computer-science-educator-logo.png</image:loc>

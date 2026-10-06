@@ -2,6 +2,22 @@ import type { ExperienceItem } from "./types";
 
 export const experience: ExperienceItem[] = [
   {
+    id: "nexastack-head-of-developers",
+    role: "Head of Developers",
+    organization: "NexaStack",
+    organizationUrl: "https://www.nexastack.net/",
+    badge: "03",
+    period: "2024 – Present",
+    type: "Engineering Leadership",
+    image: "/tuyiringire-pacifique-nexastack-head-of-developers.jpg",
+    description: [
+      "Engineering lead at NexaStack who runs the developer teams — owning code reviews, architecture decisions, and the delivery of reliable, well-tested product features.",
+      "Direct cross-functional engineering workflows across full-stack web and mobile deployments, setting high benchmarks for code quality, architectural consistency, and testing.",
+      "Lead sprint retrospectives, technical mentorship, and client-facing technology roadmaps to deliver mission-critical software solutions."
+    ],
+    highlights: ["Team Leadership", "Code Architecture", "Full-Stack Delivery"]
+  },
+  {
     id: "practicum-muhororo",
     role: "Student Teacher & Computer Science Intern",
     organization: "GS MUHORORO (Murambi Sector, Rulindo District)",
@@ -42,30 +58,32 @@ export const experience: ExperienceItem[] = [
     highlights: ["EdTech + FinTech Nexus", "Regional Hackathon", "Offline Data Sync"]
   },
   {
-    id: "iee-teaching-assistant",
-    role: "Teaching Assistant",
-    organization: "IEE (Inspire, Educate and Empower Rwanda)",
+    id: "gs-kampanga-teacher",
+    role: "Secondary School Teacher (Interim / Maternity Cover)",
+    organization: "GS KAMPANGA",
+    location: "Rulindo, Northern Province, Rwanda",
     period: "2023 – 2024",
     type: "Education & Teaching",
     description: [
-      "Supported classroom instructional delivery and mentored learners through practical computing exercises and digital literacy.",
-      "Assisted senior educators in structuring technology-supported learning activities and facilitating collaborative group work.",
-      "Strengthened personal competencies in pedagogical facilitation, student empathy, and educational communication."
+      "Graduated secondary school at GS KAMPANGA achieving Full NESA Aggregates (top national examination marks) and was immediately appointed by school administration to teach.",
+      "Hired to replace former secondary teacher who was on maternity leave, ensuring complete instructional continuity and high pedagogical rigor across classes.",
+      "Delivered curriculum lessons, administered assessments, facilitated hands-on computational problem-solving, and provided guidance to secondary students.",
+      "Demonstrated remarkable classroom management, instructional clarity, and community trust immediately after graduation."
     ],
-    highlights: ["Classroom Facilitation", "Learner Support", "Instructional Technology"]
+    highlights: ["Full NESA Aggregates", "Maternity Cover Appointment", "Classroom Leadership"]
   }
 ];
 
 export const learningTimeline = [
   {
     year: "2023",
-    title: "Teaching Foundations & Early TA Experience",
-    summary: "Served as IEE Teaching Assistant, developing hands-on classroom communication and instructional technology skills."
+    title: "Secondary Teaching & Academic Excellence at GS KAMPANGA",
+    summary: "Graduated secondary school with Full NESA Aggregates and was appointed to teach at GS KAMPANGA as interim replacement for former teacher on maternity leave."
   },
   {
     year: "2024",
-    title: "Deepening Computer Science & Pedagogical Theory",
-    summary: "Mastered CBC curricular frameworks, social constructivism, algorithm design, and modern web application development."
+    title: "Head of Developers at NexaStack & CS Foundations",
+    summary: "Appointed Head of Developers at NexaStack leading engineering teams and code architecture, while advancing pedagogical theory and CBC curriculum at UR-CE."
   },
   {
     year: "2025",

@@ -2,6 +2,18 @@ import type { LeadershipItem } from "./types";
 
 export const leadershipExperiences: LeadershipItem[] = [
   {
+    id: "lead-gbur",
+    role: "Active Member & Student Leader",
+    organization: "GBUR (Groupe Biblique Universitaire du Rwanda)",
+    category: "Christian Ministry & Fellowship",
+    responsibilities: [
+      "Fostering spiritual maturity, discipleship, and ethical accountability among university students",
+      "Coordinating campus Bible study cells, prayer intercessions, and student fellowship activities",
+      "Engaging student peers through mentorship, Christian character building, and community service"
+    ],
+    impact: "Cultivating Christian leadership, integrity, and servant stewardship within the university student community."
+  },
+  {
     id: "lead-horeb-choir",
     role: "Secretary",
     organization: "Horeb Family Choir",

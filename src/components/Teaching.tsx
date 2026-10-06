@@ -218,16 +218,16 @@ export const Teaching = () => {
                 ))}
               </div>
 
-              {/* IEE TA Callout */}
+              {/* GS KAMPANGA Teaching Appointment Callout */}
               <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6">
                 <div className="p-4 rounded-2xl bg-primary-500/20 text-primary-400 flex-shrink-0">
-                  <Users size={32} />
+                  <BookOpen size={32} />
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">Foundation Experience • 2023–2024</span>
-                  <h4 className="text-xl font-bold text-white font-serif mt-1">IEE Teaching Assistant</h4>
+                  <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">Academic Excellence & Immediate Appointment • 2023–2024</span>
+                  <h4 className="text-xl font-bold text-white font-serif mt-1">Secondary School Teacher — GS KAMPANGA</h4>
                   <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-                    Supported classroom instruction with Inspire, Educate and Empower Rwanda (IEE), developing foundational facilitation, communication, and inclusive technology integration across primary and secondary classrooms.
+                    Having graduated secondary education at <span className="text-white font-bold">GS KAMPANGA</span> with <span className="text-primary-300 font-bold">Full NESA Aggregates</span> (highest possible national mark), I was immediately hired by the school administration to step in and replace my former teacher who was on maternity leave. This formative role gave me direct mastery over lesson structuring, classroom management, and secondary student assessment.
                   </p>
                 </div>
               </div>

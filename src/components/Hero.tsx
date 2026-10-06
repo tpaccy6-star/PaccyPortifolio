@@ -13,6 +13,7 @@ const CORE_IDENTITIES = [
 ];
 
 const ROTATING_ROLES = [
+  "Head of Developers @ NexaStack",
   "Computer Science Educator",
   "Software Developer",
   "EdTech Systems Architect",
@@ -20,6 +21,13 @@ const ROTATING_ROLES = [
 ];
 
 const HERO_PORTRAITS = [
+  {
+    id: "nexastack",
+    label: "NexaStack",
+    role: "Head of Developers @ NexaStack",
+    src: "/tuyiringire-pacifique-nexastack-head-of-developers.jpg",
+    alt: "TUYIRINGIRE Pacifique - Head of Developers and Engineering Lead at NexaStack"
+  },
   {
     id: "developer",
     label: "Developer",

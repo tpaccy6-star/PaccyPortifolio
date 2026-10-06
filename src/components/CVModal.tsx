@@ -116,8 +116,19 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
             {/* Experience */}
             <div>
-              <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-3">Teaching & Practicum Experience</h2>
+              <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-3">Professional & Teaching Experience</h2>
               <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-primary-500/30">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-sm font-bold text-white">Head of Developers — NexaStack</h3>
+                    <span className="text-xs font-mono text-primary-400 font-bold">2024 – Present</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mb-2">Engineering Lead (Team Leadership • Code Architecture • Full-Stack Delivery)</p>
+                  <p className="text-xs text-slate-300">
+                    Runs developer teams — owning code reviews, architecture decisions, and the delivery of reliable, well-tested product features across web and mobile platforms.
+                  </p>
+                </div>
+
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
                   <div className="flex justify-between items-start">
                     <h3 className="text-sm font-bold text-white">Student Teacher & CS Intern — GS MUHORORO</h3>
@@ -133,11 +144,12 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
 
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-sm font-bold text-white">Teaching Assistant — IEE (Inspire, Educate and Empower Rwanda)</h3>
+                    <h3 className="text-sm font-bold text-white">Secondary School Teacher (Interim Cover) — GS KAMPANGA</h3>
                     <span className="text-xs font-mono text-slate-400">2023 – 2024</span>
                   </div>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Supported classroom facilitation, digital literacy coaching, and technology-supported learning activities for secondary students.
+                  <p className="text-xs text-slate-400 mb-1">Rulindo District, Northern Province, Rwanda</p>
+                  <p className="text-xs text-slate-300">
+                    Graduated secondary education with Full NESA Aggregates (top national score) and was hired to replace former teacher on maternity leave; delivered curriculum lessons, assessments, and student guidance.
                   </p>
                 </div>
               </div>
@@ -177,9 +189,9 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-2">Leadership & Service</h2>
-                <p className="text-slate-300"><span className="text-white font-semibold">Horeb Family Choir:</span> Secretary (Archival & Logistics)</p>
+                <p className="text-slate-300"><span className="text-white font-semibold">GBUR:</span> Active Member & Student Leader (Groupe Biblique Universitaire du Rwanda)</p>
+                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Horeb Family Choir:</span> Secretary (Archival & Logistics)</p>
                 <p className="text-slate-300 mt-1"><span className="text-white font-semibold">UR Prayer Choir:</span> Choir Leader</p>
-                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Community Outreach:</span> Nyagahandagaza Secondary School visit leader</p>
                 <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Bootcamps:</span> Mastercard Foundation SEF 2.0 / HATANA Fellow</p>
               </div>
             </div>
