@@ -1,37 +1,315 @@
 import type { Project } from "./types";
 
 export const projects: Project[] = [
+  // --- TIER 1: FEATURED PROJECTS ---
+  {
+    id: "fluentedge-academy",
+    name: "FluentEdge Academy",
+    tagline: "Structured Educational Learning Platform & Learning Hub",
+    category: ["Education", "Web", "AI"],
+    tier: "featured",
+    problem: "Most digital learning platforms lack clear pedagogical progression, overwhelming students with scattered content and failing to provide structured verification or offline resilience.",
+    solution: "A modern tiered learning hub where students enroll at progressive levels (Levels → Courses → Lessons). Features interactive quizzes, automated lesson gating, real-time progress tracking, and verifiable CEFR certificate generation.",
+    role: "Full-Stack Software Developer & System Architect",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Canvas API / PDFKit"],
+    keyFeatures: [
+      "Levels → Courses → Lessons hierarchical enrollment structure",
+      "Interactive Learning Hub with video lessons, rich content, and automated question submission",
+      "Collapsible navigation sidebar with locked lesson progression and completion badges",
+      "Automatic CEFR English Proficiency Award certificate generation with unique verification hashes",
+      "Teacher management portal: course authoring, pricing controls, and individual student exceptions",
+      "Modern dark/light interface with accessible responsive design"
+    ],
+    architectureConcept: "Levels → Courses → Lessons: Students enroll at the Level rather than fragmented courses. Progression requires meeting question thresholds before unlocking subsequent units.",
+    challenges: "Building a state machine that handles deterministic lesson locking, persistent progress recovery across browser reloads, and instantaneous certificate rendering.",
+    whatILearned: "Deepened expertise in role-governed instructional design, state preservation, and building EdTech UX that reduces cognitive friction for self-paced students.",
+    status: "In Development",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
+    certificatePreview: true,
+    highlights: ["CEFR English Award Certified", "Locked Gating Progression", "Level-based Enrollment"]
+  },
   {
     id: "gen-rise-scholar-portal",
     name: "Generation Rise Scholar Portal",
-    category: ["Education", "Web"],
-    problem: "Needed a centralized platform for the University of Rwanda to connect Scholars, Mentors, Teachers, and Administrators.",
-    solution: "A comprehensive web application that supports mentorship and leadership development workflows across four user roles.",
-    role: "Lead Developer [VERIFY role]",
-    techStack: ["React", "Vite", "TypeScript", "Tailwind CSS"],
+    tagline: "Gender-Equity & Scholarship Lifecycle Support Platform",
+    category: ["Education", "Web", "AI", "Mobile"],
+    tier: "featured",
+    problem: "Scholarship programs often struggle to coordinate communication, leadership milestones, mentorship tracking, and teacher evaluations across distributed scholars.",
+    solution: "A mobile-first, multi-role portal connecting Scholars, Mentors, Teachers, and Administrators with centralized scholar profiles, automated progress workflows, and local AI chatbot assistance.",
+    role: "Full-Stack Developer & UI/UX Designer",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Local AI / Ollama"],
     keyFeatures: [
-      "Multi-role dashboard tailored to Scholars, Mentors, Teachers, and Admins",
-      "Mentorship and leadership development workflow tracking",
-      "Secure user authentication and role-based access control"
+      "Four tailored user roles: Scholars, Mentors, Teachers, and Program Administrators",
+      "Holistic scholar development tracking: Academic records, leadership initiatives, and mentorship hours",
+      "Mobile-first responsive interface optimized for students accessing the platform on low-bandwidth smartphones",
+      "Local AI chatbot module to provide round-the-clock guidance on academic and personal development queries",
+      "Admin analytics dashboard monitoring retention, attendance, and scholarship intervention alerts"
     ],
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop", // Placeholder image
-    status: "In Progress" // [VERIFY current build status]
+    architectureConcept: "Role-Based Access Control (RBAC) architecture separating scholar privacy while aggregating program-wide performance metrics for donors and administrators.",
+    challenges: "Designing intuitive mobile workflows for high-school and university scholars while maintaining granular permission boundaries between mentors and evaluators.",
+    whatILearned: "Gained hands-on experience designing for gender-equity initiatives and building multi-tenant institutional portals with real-world social impact.",
+    status: "In Development",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["4 User Roles", "Mobile-First Design", "Local AI Assistant Concept"]
+  },
+  {
+    id: "smart-attendance-nsams",
+    name: "Smart School Attendance System (NSAMS)",
+    tagline: "Multi-Tiered National School Attendance & Monitoring Platform",
+    category: ["Education", "Web", "Systems", "Data"],
+    tier: "featured",
+    problem: "Manual paper-based attendance in Rwandan primary and secondary schools leads to delayed dropout detection, heavy teacher administrative burdens, and lack of real-time visibility for district and national educational officers.",
+    solution: "An enterprise-grade attendance management system structured around Rwanda's administrative hierarchy (Province → District → Sector → School → Class) providing immediate attendance telemetry from classroom to MINEDUC.",
+    role: "System Architect & Lead Concept Developer",
+    techStack: ["React", "Node.js", "PostgreSQL", "MariaDB", "REST APIs", "Tailwind CSS"],
+    keyFeatures: [
+      "Rigorous administrative hierarchy mapping: Province → District → Sector → School → Class",
+      "Custom role dashboards for Teachers, Headteachers, Sector Education Officers (SEO), District Education Officers (DEO), PEO, and MINEDUC",
+      "Daily digital roll-call with bulk quick-marking, excuse note attachments, and automated absence counters",
+      "Early warning dropout alert algorithms identifying chronic absenteeism before learners fall through the cracks",
+      "Exportable aggregated statistical reports for policy planning and school feeding allocation"
+    ],
+    architectureConcept: "Hierarchical data partitioning ensuring data flows upward securely from individual class registers to macro-level ministry dashboards without performance bottlenecks.",
+    challenges: "Modeling Rwanda's nationwide administrative hierarchy in relational database schemas while keeping daily mobile input friction-free for busy classroom teachers.",
+    whatILearned: "Understood enterprise requirements specification (SRS), large-scale data aggregation, and public-sector educational policy needs.",
+    status: "Concept",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["MINEDUC Hierarchy Alignment", "Dropout Early Warning", "Multi-Level Dashboards"]
+  },
+  {
+    id: "hli-timetable-system",
+    name: "HLI Timetable Management & Generator",
+    tagline: "Intelligent Conflict-Free Higher Learning Timetable Engine",
+    category: ["Education", "Systems", "Web", "AI"],
+    tier: "featured",
+    problem: "University scheduling (e.g. at the University of Rwanda) requires resolving high-dimensional constraints: overlapping lecturer availability, room capacities, multiple student cohorts, multi-campus travels, and department course requirements.",
+    solution: "An intelligent constraint-satisfaction timetable engine that automatically ingests academic parameters and generates optimized, conflict-free weekly schedules with zero lecturer or hall collisions.",
+    role: "Algorithm Designer & Full-Stack Developer",
+    techStack: ["TypeScript", "React", "Node.js", "Constraint Satisfaction Algorithms", "PostgreSQL"],
+    keyFeatures: [
+      "Multi-constraint scheduling engine: Lecturers, Rooms, Programs, Cohorts, Semesters, Campuses, and Timeslots",
+      "Real-time collision detection identifying overlapping instructor hours or over-capacity lecture halls",
+      "Cohort-synchronized views allowing students and faculty to access personalized iCal/web schedules",
+      "Emergency reschedule assistant recommending optimal alternative slots when unexpected cancellations occur",
+      "Department-wide workload balancer preventing faculty fatigue and uneven daily room utilization"
+    ],
+    architectureConcept: "Heuristic and backtracking constraint-satisfaction algorithm coupled with an intuitive React grid canvas for drag-and-drop manual fine-tuning.",
+    challenges: "Handling NP-hard combinatorial constraint optimization while giving university administrators complete visual control over manual overrides.",
+    whatILearned: "Advanced algorithmic problem solving, graph coloring/constraint logic, and university-level logistical optimization.",
+    status: "Research",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["Constraint Satisfaction", "Zero-Collision Scheduling", "Campus Logistics"]
+  },
+
+  // --- TIER 2: SYSTEM & SPECIALIZED PROJECTS ---
+  {
+    id: "quizmaster-v2",
+    name: "QuizMaster V2",
+    tagline: "Offline LAN-Based Examination & Testing System for 60+ Users",
+    category: ["Desktop", "Education", "Systems"],
+    tier: "standard",
+    problem: "Schools with limited or non-existent internet cannot utilize cloud assessment tools like Google Forms or Kahoot for timed classroom examinations.",
+    solution: "A local area network (LAN) desktop examination application built in C# and WPF that hosts real-time synchronized quizzes for up to 60 concurrent student devices via a single offline teacher laptop.",
+    role: "Desktop Software Engineer",
+    techStack: ["C#", ".NET", "WPF", "TCP/IP Sockets", "SQLite", "Local Networking"],
+    keyFeatures: [
+      "100% internet-independent operation running over a standard Wi-Fi router or Ethernet hub",
+      "Teacher host console: Live quiz broadcasting, timer controls, and connected station monitoring",
+      "Student workstation client with anti-cheat lockouts and instant response submission",
+      "Automated marking with immediate score tallying and grade breakdown exports (CSV/Excel)",
+      "Supports diverse question banks (Multiple Choice, True/False, Short Answer)"
+    ],
+    architectureConcept: "Client-server socket architecture over TCP/IP: The teacher computer acts as an embedded local server streaming questions and listening for student responses.",
+    challenges: "Handling thread synchronization and potential packet drops across flaky local wireless routers without losing student answers.",
+    whatILearned: "Low-level socket programming, multi-threaded GUI programming in WPF, and designing resilient offline assessment systems for African classroom realities.",
+    status: "Prototype",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["Zero-Internet Required", "Supports 60+ Concurrent Learners", "Real-Time LAN Sockets"]
+  },
+  {
+    id: "imbutobooks",
+    name: "ImbutoBooks",
+    tagline: "Offline-First SME Bookkeeping & Rwandan Tax Accounting System",
+    category: ["FinTech", "Web", "Systems"],
+    tier: "standard",
+    problem: "Rwandan micro, small, and medium enterprises (MSMEs) struggle with complex manual accounting, tax calculation compliance, and unreliable internet connections in market stalls.",
+    solution: "An offline-first bookkeeping platform tailored to Rwandan tax regulations and business operations, recording sales, expenditures, inventory, and automated tax estimates with background cloud sync.",
+    role: "Full-Stack FinTech Developer",
+    techStack: ["React", "TypeScript", "IndexedDB / PWA", "Node.js", "PostgreSQL", "Service Workers"],
+    keyFeatures: [
+      "Offline-first PWA caching all financial entries locally with automatic reconciliation upon reconnect",
+      "Simplified sales & expense recording with instant profit and loss balance sheets",
+      "Inventory tracking with low-stock alerts and supplier relationship records",
+      "Rwandan tax estimation module calculating VAT and turnover tax liabilities",
+      "One-click PDF receipt and financial summary generation in Kinyarwanda and English"
+    ],
+    architectureConcept: "Offline-first sync engine using IndexedDB for client transactions and conflict-free timestamp replication against the central database.",
+    challenges: "Designing reliable two-way conflict resolution when merchants enter data across multiple devices while offline.",
+    whatILearned: "Service worker caching strategies, Rwandan tax codes, financial inclusion principles, and progressive web application architecture.",
+    status: "Concept",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["Offline-First PWA", "Rwandan Tax Calculations", "MSME Inclusion"]
+  },
+  {
+    id: "teacherdesk-lesson-buddy",
+    name: "Lesson Buddy / TeacherDesk",
+    tagline: "CBC-Aligned Lesson Planning & Instructional Assistant for Educators",
+    category: ["Education", "AI", "Web"],
+    tier: "standard",
+    problem: "Teachers in Rwanda spend countless unpaid hours preparing detailed lesson plans under the Competency-Based Curriculum (CBC) framework, diverting time away from active student mentorship.",
+    solution: "A dedicated digital workstation that automates CBC lesson plan generation, provides curriculum-aligned teaching aids, tracks continuous student assessments, and offers AI pedagogical suggestions.",
+    role: "EdTech Developer & Instructional Designer",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Ollama / Gemini API"],
+    keyFeatures: [
+      "CBC-standard lesson plan template generator with 5E instructional model integration",
+      "Curriculum resource library organizing syllabi, teaching guides, and printable worksheets",
+      "Continuous assessment tracker recording student competency acquisition over time",
+      "Pedagogical AI assistant suggesting engaging classroom activities for resource-limited settings",
+      "One-click export of lesson notes and plans formatted for school inspection standards"
+    ],
+    architectureConcept: "Pedagogical prompt engineering tailored to the Rwanda Basic Education Board (REB) curriculum standards with local storage fallback for rural schools.",
+    challenges: "Aligning software data models with the rigorous multi-step CBC lesson structure prescribed by REB.",
+    whatILearned: "Direct translation of educational policy into software features; building tools that reduce administrative burnout for teachers.",
+    status: "Concept",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["CBC & REB Alignment", "5E Model Templates", "Reduces Teacher Workload"]
   },
   {
     id: "tma-me-dashboard",
-    name: "TMA M&E Dashboard",
+    name: "TMA M&E Impact Dashboard",
+    tagline: "Academic Health & Institutional Monitoring and Evaluation System",
     category: ["Data", "Web", "Education"],
-    problem: "Talent Mine Academy (Nigeria) needed a way to visualize indicators across academic and organizational health.",
-    solution: "A monitoring & evaluation dashboard that visualizes indicators as a companion tool to the organization's Impact Model & MEL Framework.",
-    role: "Developer",
-    techStack: ["React", "TypeScript", "Data Visualization Libraries"],
+    tier: "standard",
+    problem: "Educational non-profits need clear, real-time visualization of key performance indicators spanning foundational literacy, teacher performance, and organizational sustainability.",
+    solution: "A comprehensive monitoring & evaluation dashboard visualizing longitudinal student metrics, community impact indicators, and institutional health parameters for Talent Mine Academy.",
+    role: "Frontend Developer & Data Visualization Specialist",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Chart.js / Recharts", "REST APIs"],
     keyFeatures: [
-      "Academic Foundation tracking and visualization",
-      "Economic Empowerment & Community Impact indicators",
-      "Teacher Quality & Institutional Health monitoring"
+      "Academic Foundation KPI tracking across grade cohorts and foundational literacy milestones",
+      "Economic empowerment and community intervention telemetry charts",
+      "Teacher qualification, pedagogical quality, and training completion indicators",
+      "Interactive data filtering by cohort, term, gender, and intervention track",
+      "Executive summary exports for donor reporting and stakeholder accountability"
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop", // Placeholder image
-    status: "Shipped"
+    challenges: "Synthesizing complex multi-dimensional evaluation data into clean, readily interpretable visual summaries without clutter.",
+    whatILearned: "Applied educational data science, dashboard ergonomics, and monitoring & evaluation (M&E) reporting frameworks.",
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    highlights: ["M&E Indicators", "Longitudinal Tracking", "Donor-Ready Visualizations"]
   },
-  // [VERIFY status/description for Smart Attendance / NSAMS, Rwandan Lesson Buddy / TeacherDesk, QuizMaster, ImbutoBooks]
+
+  // --- TIER 3: REACT NATIVE MOBILE PRACTICAL SERIES ---
+  {
+    id: "rn-student-profile",
+    name: "React Native: Student Profile App",
+    tagline: "Mobile Student Information & Identity Card Interface",
+    category: ["Mobile"],
+    tier: "mobile-series",
+    problem: "Developing proficiency in mobile component hierarchies, props transmission, and native styling for student card applications.",
+    solution: "A mobile application rendering institutional student profiles including full name, ID registration, academic college, program, and interactive welcome actions.",
+    role: "Mobile App Developer",
+    techStack: ["React Native", "TypeScript", "Android Studio", "Hermes Engine", "ADB"],
+    keyFeatures: [
+      "Student identity card UI with badge display and verified credential flags",
+      "Dynamic prop transmission displaying Program, College, Student ID, and University Email",
+      "Interactive welcome action button triggering smooth native alert modals",
+      "Optimized for high-DPI Android displays using native flexbox layouts"
+    ],
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+    highlights: ["Android SDK Verified", "Hermes Optimized", "Native Mobile UI"]
+  },
+  {
+    id: "rn-calculator",
+    name: "React Native: Calculator",
+    tagline: "Arithmetic Computation Engine with Responsive Keypad",
+    category: ["Mobile"],
+    tier: "mobile-series",
+    problem: "Implementing stateful mathematical expression parsing and error handling on touch-based mobile viewports.",
+    solution: "A fast, ergonomic mobile calculator supporting addition, subtraction, multiplication, and division with real-time expression history and clean decimal formatting.",
+    role: "Mobile App Developer",
+    techStack: ["React Native", "JavaScript", "Android Studio", "Gradle"],
+    keyFeatures: [
+      "Full arithmetic suite: Addition (+), Subtraction (-), Multiplication (×), Division (÷)",
+      "Zero-division guardrails and input validation preventing application crashes",
+      "Grid-based button layout optimized for one-thumb mobile interaction",
+      "Expression history display with instant clear (AC) and backspace actions"
+    ],
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?q=80&w=800&auto=format&fit=crop",
+    highlights: ["Touch-Optimized", "Error Handling", "React Native Core"]
+  },
+  {
+    id: "rn-todo-list",
+    name: "React Native: Todo Task Manager",
+    tagline: "Interactive Task Organization & State Mutation App",
+    category: ["Mobile"],
+    tier: "mobile-series",
+    problem: "Mastering CRUD list mutations, key extractors, and smooth FlatList rendering in React Native mobile runtimes.",
+    solution: "An interactive mobile productivity app allowing students to add tasks, toggle completion states with visual feedback, and delete finished items.",
+    role: "Mobile App Developer",
+    techStack: ["React Native", "TypeScript", "AsyncStorage", "Android Studio"],
+    keyFeatures: [
+      "Instant task creation with input sanitization and keyboard dismissal",
+      "Interactive completion toggle with dynamic strike-through typography",
+      "Swipe-to-delete task removal utilizing FlatList performance optimizations",
+      "Empty state illustration and active pending task counter"
+    ],
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=800&auto=format&fit=crop",
+    highlights: ["State Management", "FlatList Optimization", "Task Organization"]
+  },
+  {
+    id: "rn-grade-calculator",
+    name: "React Native: Academic Grade Calculator",
+    tagline: "Continuous Assessment & GPA Academic Evaluation App",
+    category: ["Mobile", "Education"],
+    tier: "mobile-series",
+    problem: "Students frequently struggle to calculate weighted continuous assessment (CAT) scores and predict final examination requirements.",
+    solution: "A mobile grade calculator that computes weighted scores, letter grade assignments, and honours classification based on university grading criteria.",
+    role: "Mobile App Developer",
+    techStack: ["React Native", "TypeScript", "Android Studio", "Gradle"],
+    keyFeatures: [
+      "Weighted score calculation combining assignments, continuous tests (CAT), and exams",
+      "Instant letter grade mapping (A, B, C, D, F) with pass/fail performance indicators",
+      "Target score simulator showing what final mark is needed to achieve desired honors",
+      "Clean academic reporting card layout"
+    ],
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+    highlights: ["Weighted Calculations", "Academic Grading", "Student Utility"]
+  },
+  {
+    id: "rn-weather-app",
+    name: "React Native: Weather Application",
+    tagline: "Asynchronous Weather Telemetry & Condition Monitor",
+    category: ["Mobile"],
+    tier: "mobile-series",
+    problem: "Gaining proficiency with asynchronous network requests, REST API integration, and loading states on mobile devices.",
+    solution: "A weather application fetching live meteorological data, temperature readings, humidity levels, and forecasting conditions across Rwandan districts and global cities.",
+    role: "Mobile App Developer",
+    techStack: ["React Native", "TypeScript", "Fetch API", "Android Studio", "Geolocation"],
+    keyFeatures: [
+      "Asynchronous weather fetching from public weather REST APIs",
+      "Dynamic weather condition icons (Sunny, Rainy, Overcast, Thunderstorm)",
+      "Metrics overview: Celsius/Fahrenheit toggle, wind velocity, humidity, and barometric pressure",
+      "Graceful network error recovery and offline placeholder caching"
+    ],
+    status: "Completed",
+    githubUrl: "https://github.com/tpaccy6-star",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=800&auto=format&fit=crop",
+    highlights: ["Async REST API", "Live Telemetry", "Condition Icons"]
+  }
 ];

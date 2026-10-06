@@ -7,10 +7,18 @@ export const education: Education[] = [
     institution: "University of Rwanda – College of Education",
     department: "Department of Mathematics & Computer Science Education",
     focusAreas: [
-      "Computer Science",
-      "Education & Teaching Methodology",
-      "Programming",
-      "Educational Technology"
+      "Computer Science Education",
+      "Software Development",
+      "Educational Technology",
+      "Artificial Intelligence",
+      "Web & Mobile Engineering",
+      "Database Systems (SQL)",
+      "Human-Computer Interaction",
+      "Information Systems Architecture",
+      "Digital Learning Platforms",
+      "ICT Integration in Education",
+      "Competency-Based Curriculum (CBC)",
+      "Operating Systems & Algorithms"
     ]
   }
 ];

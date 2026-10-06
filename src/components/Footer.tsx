@@ -1,58 +1,110 @@
-import { Github, Mail, Instagram, Twitter, MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Github, Mail, MessageCircle, ArrowUp } from 'lucide-react';
 
 export const Footer = () => {
-  return (
-    <footer className="relative bg-slate-950 text-white overflow-hidden pt-20 pb-12">
-      {/* Infinite Marquee */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden border-y border-slate-800 bg-slate-900/50 py-3">
-        <motion.div 
-          className="flex whitespace-nowrap text-3xl font-bold font-serif opacity-20"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ ease: "linear", duration: 15, repeat: Infinity }}
-        >
-          <span className="mx-4">LET'S WORK TOGETHER • LET'S WORK TOGETHER • LET'S WORK TOGETHER • LET'S WORK TOGETHER • </span>
-          <span className="mx-4">LET'S WORK TOGETHER • LET'S WORK TOGETHER • LET'S WORK TOGETHER • LET'S WORK TOGETHER • </span>
-        </motion.div>
-      </div>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center mt-12 relative z-10">
-        <div className="mb-8 md:mb-0 text-center md:text-left">
-          <h3 className="font-serif text-3xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">TUYIRINGIRE Pacifique</h3>
-          <p className="text-slate-400 text-sm font-medium tracking-wide uppercase">Computer Science Educator & Software Developer</p>
-          <p className="text-primary-400 text-sm mt-2 font-medium">Transforming Learning Through Passion and Technology.</p>
+  return (
+    <footer className="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 relative z-10 text-slate-400">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-slate-800/80">
+          
+          {/* Identity & Mission */}
+          <div className="md:col-span-5 space-y-4">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/tuyiringire-pacifique-computer-science-educator-logo.png" 
+                alt="Paccy Logo" 
+                className="h-9 w-auto"
+              />
+              <span className="text-xl font-bold font-serif text-white tracking-tight">
+                TUYIRINGIRE Pacifique (Paccy)
+              </span>
+            </div>
+            <p className="text-sm font-semibold text-primary-400 font-serif">
+              Computer Science Educator • Software Developer • EdTech Builder
+            </p>
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Passionate about combining education, software engineering, and emerging technologies to solve real classroom, institutional, and community challenges in Rwanda.
+            </p>
+            <p className="text-xs italic text-slate-500">
+              "Transforming Learning Through Passion and Technology"
+            </p>
+          </div>
+
+          {/* Quick Links Column 1 */}
+          <div className="md:col-span-3 space-y-3">
+            <h4 className="text-xs font-mono font-bold text-slate-200 uppercase tracking-widest">
+              Core Showcase
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <a href="#about" className="hover:text-primary-400 transition-colors">About & Four Pillars</a>
+              </li>
+              <li>
+                <a href="#teaching" className="hover:text-primary-400 transition-colors">Teaching Practicum (GS Muhororo)</a>
+              </li>
+              <li>
+                <a href="#projects" className="hover:text-primary-400 transition-colors">Software Engineering Projects</a>
+              </li>
+              <li>
+                <a href="#problems" className="hover:text-primary-400 transition-colors">Problems I Want to Solve</a>
+              </li>
+              <li>
+                <a href="#research" className="hover:text-primary-400 transition-colors">Research & Innovation</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links Column 2 */}
+          <div className="md:col-span-4 space-y-3">
+            <h4 className="text-xs font-mono font-bold text-slate-200 uppercase tracking-widest">
+              Connect & Outreach
+            </h4>
+            <div className="space-y-2 text-xs">
+              <p className="flex items-center gap-2">
+                <Mail size={14} className="text-primary-400" />
+                <a href="mailto:tpaccy6@gmail.com" className="hover:text-primary-400 transition-colors">
+                  tpaccy6@gmail.com
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
+                <MessageCircle size={14} className="text-emerald-400" />
+                <a href="https://wa.me/250781343621" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+                  +250 781 343 621 (WhatsApp)
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
+                <Github size={14} className="text-slate-300" />
+                <a href="https://github.com/tpaccy6-star" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">
+                  github.com/tpaccy6-star
+                </a>
+              </p>
+            </div>
+            <div className="pt-2">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center text-xs font-bold text-primary-400 hover:text-primary-300"
+              >
+                Send a direct message &rarr;
+              </a>
+            </div>
+          </div>
+
         </div>
-        
-        <div className="flex space-x-6 mb-8 md:mb-0">
-          <a href="https://github.com/tpaccy6-star" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-white hover:bg-primary-600 transition-all duration-300 interactive shadow-inner">
-            <Github size={22} />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a href="https://x.com/Tuyipaccy" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-white hover:bg-black transition-all duration-300 interactive shadow-inner" title="X (Twitter)">
-            <Twitter size={22} />
-            <span className="sr-only">X (Twitter)</span>
-          </a>
-          <a href="https://www.instagram.com/tr_pacifique" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-white hover:bg-pink-600 transition-all duration-300 interactive shadow-inner" title="Instagram">
-            <Instagram size={22} />
-            <span className="sr-only">Instagram</span>
-          </a>
-          <a href="https://wa.me/250781343621" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-white hover:bg-green-600 transition-all duration-300 interactive shadow-inner" title="WhatsApp">
-            <MessageCircle size={22} />
-            <span className="sr-only">WhatsApp</span>
-          </a>
-          <a href="mailto:tpaccy6@gmail.com" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-white hover:bg-purple-600 transition-all duration-300 interactive shadow-inner" title="Email me">
-            <Mail size={22} />
-            <span className="sr-only">Email</span>
-          </a>
-        </div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800/50 text-center flex flex-col md:flex-row justify-between items-center">
-        <div className="text-slate-500 text-sm font-medium mb-4 md:mb-0">
-          &copy; {new Date().getFullYear()} TUYIRINGIRE Pacifique. All rights reserved.
-        </div>
-        <div className="text-slate-600 text-sm font-medium">
-          Built with <span className="text-primary-500">React</span> & <span className="text-purple-500">Framer Motion</span>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <div>
+            © 2026 <span className="text-slate-300 font-medium">TUYIRINGIRE Pacifique (Paccy)</span>. Built with React, TypeScript & Tailwind CSS.
+          </div>
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors border border-slate-800"
+          >
+            <ArrowUp size={13} /> Back to top
+          </button>
         </div>
       </div>
     </footer>

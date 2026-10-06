@@ -1,25 +1,32 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils';
+import { CVModal } from './CVModal';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Teaching', href: '#teaching' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Problems', href: '#problems' },
+  { name: 'Research', href: '#research' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Leadership', href: '#leadership' },
   { name: 'Contact', href: '#contact' },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     
-    // Force dark mode for the new terminal theme
+    // Maintain dark theme
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
     
@@ -27,83 +34,113 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-      'fixed top-0 w-full z-50 transition-all duration-500',
-      isScrolled ? 'bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl shadow-sm py-3 border-b border-slate-200/50 dark:border-slate-800/50' : 'bg-transparent py-6'
-    )}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0"
-          >
-            <a href="#home" className="flex items-center group">
-              <img 
-                src="/tuyiringire-pacifique-computer-science-educator-logo.png" 
-                alt="TUYIRINGIRE Pacifique portfolio logo" 
-                className="h-10 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]" 
-              />
-            </a>
-          </motion.div>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="relative text-sm font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+    <>
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={cn(
+          'fixed top-0 w-full z-50 transition-all duration-500',
+          isScrolled 
+            ? 'bg-slate-950/85 backdrop-blur-xl shadow-lg py-3 border-b border-slate-800/80' 
+            : 'bg-transparent py-5'
+        )}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
             
-            {/* Theme toggle removed, theme is now always dark */}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-600 dark:text-slate-300 hover:text-primary-600 focus:outline-none"
+            {/* Logo & Preferred Name */}
+            <motion.div 
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex-shrink-0"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-xl overflow-hidden border-b border-slate-200 dark:border-slate-800"
-          >
-            <div className="px-4 py-4 space-y-2">
+              <a href="#home" className="flex items-center gap-3 group">
+                <img 
+                  src="/tuyiringire-pacifique-computer-science-educator-logo.png" 
+                  alt="TUYIRINGIRE Pacifique portfolio logo" 
+                  className="h-9 w-auto transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]" 
+                />
+                <div className="hidden sm:block">
+                  <span className="text-base font-bold text-white tracking-tight block leading-tight font-serif">
+                    PACCY
+                  </span>
+                  <span className="text-[10px] text-primary-400 font-mono tracking-widest block uppercase">
+                    CS Educator & Dev
+                  </span>
+                </div>
+              </a>
+            </motion.div>
+            
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex space-x-6 items-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:text-primary-600 hover:bg-primary-50 dark:text-slate-200 dark:hover:bg-slate-800/50 transition-colors"
+                  className="relative text-xs font-semibold text-slate-300 hover:text-primary-400 transition-colors py-1 group"
                 >
                   {link.name}
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
+              
+              <button
+                onClick={() => setIsCVModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-primary-300 border border-slate-700 hover:border-primary-500/50 transition-colors"
+              >
+                <FileText size={13} /> CV
+              </button>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden flex items-center space-x-3">
+              <button
+                onClick={() => setIsCVModalOpen(true)}
+                className="px-3 py-1.5 rounded-xl bg-slate-800 text-xs font-bold text-primary-300 border border-slate-700 flex items-center gap-1"
+              >
+                <FileText size={13} /> CV
+              </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-slate-300 hover:text-primary-400 focus:outline-none p-1.5"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu Drawer */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden bg-slate-950/95 backdrop-blur-2xl shadow-2xl overflow-hidden border-b border-slate-800"
+            >
+              <div className="px-5 py-5 space-y-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-200 hover:text-primary-300 hover:bg-slate-800/60 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+
+      {/* CV Modal */}
+      <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
+    </>
   );
 };

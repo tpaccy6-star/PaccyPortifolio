@@ -1,79 +1,142 @@
 import { SectionHeader } from './SectionHeader';
-import { experience } from '../data/experience';
+import { experience, learningTimeline } from '../data/experience';
 import { education } from '../data/education';
 import { motion } from 'framer-motion';
+import { Briefcase, GraduationCap, Clock, CheckCircle2 } from 'lucide-react';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="section-container">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
-        {/* Experience Column */}
-        <div>
-          <SectionHeader title="Experience" />
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 dark:before:via-slate-700 before:to-transparent">
-            {experience.map((exp, index) => (
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                key={exp.id} 
-                className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-              >
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-surface-light dark:border-surface-dark bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-500 group-hover:scale-125 group-hover:bg-primary-500 group-hover:text-white">
-                  <div className="w-2 h-2 rounded-full bg-current"></div>
-                </div>
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel p-6 rounded-2xl group-hover:border-primary-300 dark:group-hover:border-primary-700 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-                  <div className="flex flex-col mb-2">
-                    <span className="text-sm font-bold text-primary-600 dark:text-primary-400 tracking-wider uppercase mb-1">{exp.period}</span>
-                    <h4 className="text-xl font-bold font-serif text-slate-900 dark:text-white mt-1">{exp.role}</h4>
-                    <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{exp.company}</span>
+    <section id="experience" className="section-container relative">
+      <div className="relative z-10">
+        <SectionHeader 
+          title="Experience & Education" 
+          subtitle="A progressive trajectory connecting classroom pedagogy, rapid innovation bootcamps, and rigorous software development."
+          align="center"
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          
+          {/* Experience Column */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-3 rounded-2xl bg-primary-500/10 text-primary-400">
+                <Briefcase size={24} />
+              </div>
+              <h3 className="text-2xl font-bold font-serif text-white">Practicum & Professional Experience</h3>
+            </div>
+
+            <div className="space-y-8 relative before:absolute before:inset-0 before:left-4 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary-500 before:via-purple-500 before:to-transparent">
+              {experience.map((exp, index) => (
+                <motion.div 
+                  key={exp.id} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="relative pl-10"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-2.5 top-1.5 w-3.5 h-3.5 rounded-full bg-primary-500 border-4 border-slate-900 shadow-sm" />
+
+                  <div className="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-primary-500/40 transition-colors">
+                    <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                      <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-wider">
+                        {exp.period}
+                      </span>
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                        {exp.type}
+                      </span>
+                    </div>
+
+                    <h4 className="text-lg font-bold font-serif text-white">{exp.role}</h4>
+                    <p className="text-sm font-semibold text-primary-300 mb-4">{exp.organization}</p>
+
+                    <ul className="space-y-2 text-xs text-slate-300 mb-4">
+                      {exp.description.map((desc, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 size={13} className="text-primary-400 mt-0.5 flex-shrink-0" />
+                          <span>{desc}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {exp.highlights && (
+                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800">
+                        {exp.highlights.map(h => (
+                          <span key={h} className="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 border border-slate-700">
+                            {h}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                    {exp.description.map((desc, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-primary-400 mt-1.5">•</span>
-                        <span>{desc}</span>
-                      </li>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education & Learning Journey Column */}
+          <div className="space-y-12">
+            
+            {/* Education Box */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-400">
+                  <GraduationCap size={24} />
+                </div>
+                <h3 className="text-2xl font-bold font-serif text-white">Academic Qualifications</h3>
+              </div>
+
+              {education.map(edu => (
+                <div key={edu.id} className="glass-panel p-8 rounded-3xl border border-purple-500/30">
+                  <span className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider block mb-1">
+                    Undergraduate Degree
+                  </span>
+                  <h4 className="text-xl font-bold font-serif text-white mb-2">{edu.degree}</h4>
+                  <p className="text-base text-primary-300 font-semibold mb-1">{edu.institution}</p>
+                  <p className="text-xs text-slate-400 mb-6 font-mono">{edu.department}</p>
+                  
+                  <span className="text-xs uppercase tracking-widest font-bold text-slate-300 block mb-3">
+                    Academic Focus Areas & Specializations
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {edu.focusAreas.map((area: string) => (
+                      <span key={area} className="text-xs px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-200 border border-slate-700/80 font-medium">
+                        {area}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
 
-        {/* Education Column */}
-        <div id="education">
-          <SectionHeader title="Education" />
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                key={edu.id} 
-                className="glass-panel p-8 rounded-3xl group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 border-l-4 border-l-transparent hover:border-l-primary-500"
-              >
-                <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-serif">{edu.degree}</h4>
-                <p className="text-lg text-primary-600 dark:text-primary-400 font-semibold mb-1">{edu.institution}</p>
-                <p className="text-slate-600 dark:text-slate-400 mb-6 font-medium">{edu.department}</p>
-                
-                <h5 className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-widest">Focus Areas</h5>
-                <div className="flex flex-wrap gap-2">
-                  {edu.focusAreas.map(area => (
-                    <span key={area} className="px-3 py-1.5 bg-slate-100/80 dark:bg-slate-800/80 border border-slate-200/50 dark:border-slate-700/50 rounded-lg text-sm text-slate-700 dark:text-slate-300 font-medium hover:bg-primary-50 dark:hover:bg-slate-700 transition-colors cursor-default">
-                      {area}
+            {/* Learning Progression Timeline */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-2xl bg-primary-500/10 text-primary-400">
+                  <Clock size={24} />
+                </div>
+                <h3 className="text-xl font-bold font-serif text-white">Learning Journey Progression</h3>
+              </div>
+
+              <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+                {learningTimeline.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 p-3 rounded-2xl bg-slate-800/40 border border-slate-700/40">
+                    <span className="text-xs font-mono font-bold text-primary-400 bg-primary-950/60 px-2 py-1 rounded border border-primary-800/50 flex-shrink-0">
+                      {item.year}
                     </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+                    <div>
+                      <h5 className="text-sm font-bold text-white">{item.title}</h5>
+                      <p className="text-xs text-slate-400 mt-0.5">{item.summary}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
+          </div>
+
+        </div>
       </div>
     </section>
   );

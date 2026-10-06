@@ -1,8 +1,19 @@
-import { ArrowRight, Download, Github } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight, Download, Github, Mail, Laptop, MessageCircle } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useEffect } from 'react';
+import { CVModal } from './CVModal';
+
+const CORE_IDENTITIES = [
+  "Teacher",
+  "Developer",
+  "Problem Solver",
+  "Technology Enthusiast",
+  "Learner"
+];
 
 export const Hero = () => {
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -10,10 +21,10 @@ export const Hero = () => {
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
-  const blob1X = useTransform(smoothX, [0, 1000], [0, 50]);
-  const blob1Y = useTransform(smoothY, [0, 1000], [0, 50]);
-  const blob2X = useTransform(smoothX, [0, 1000], [0, -50]);
-  const blob2Y = useTransform(smoothY, [0, 1000], [0, -50]);
+  const blob1X = useTransform(smoothX, [0, 1000], [0, 40]);
+  const blob1Y = useTransform(smoothY, [0, 1000], [0, 40]);
+  const blob2X = useTransform(smoothX, [0, 1000], [0, -40]);
+  const blob2Y = useTransform(smoothY, [0, 1000], [0, -40]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -25,147 +36,181 @@ export const Hero = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="home" className="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
+    <section id="home" className="pt-28 pb-20 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Dynamic Background Blobs */}
-      <div className="absolute top-0 right-0 w-full h-full -z-10 opacity-40 dark:opacity-20 pointer-events-none overflow-hidden">
+      <div className="absolute top-0 right-0 w-full h-full -z-10 opacity-30 pointer-events-none overflow-hidden">
         <motion.div 
           style={{ x: blob1X, y: blob1Y }}
-          className="absolute top-0 right-10 w-96 h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"
-        ></motion.div>
+          className="absolute top-0 right-10 w-96 h-96 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-60"
+        />
         <motion.div 
           style={{ x: blob2X, y: blob2Y }}
-          className="absolute top-0 right-60 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"
-        ></motion.div>
+          className="absolute top-0 right-60 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-60"
+        />
         <motion.div 
           style={{ x: blob1X, y: blob2Y }}
-          className="absolute -bottom-8 right-40 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"
-        ></motion.div>
+          className="absolute -bottom-8 right-40 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50"
+        />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        {/* Left Column (Content) */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-20"
+          className="lg:col-span-7 relative z-20"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative z-20"
-          >
-            {/* Animated Logo integrated into Hero */}
-            <div className="w-48 h-auto mb-6 -ml-4">
-              <video 
-                src="/Logo_Animation.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full h-full object-contain mix-blend-screen drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]"
-              />
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-              <span className="block text-slate-900 dark:text-white pb-1">
-                TUYIRINGIRE Pacifique
+          {/* Logo Animation Integration */}
+          <div className="w-44 h-auto mb-4 -ml-3">
+            <video 
+              src="/Logo_Animation.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-contain mix-blend-screen drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+            />
+          </div>
+
+          {/* Subtitle / Brand Header */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-semibold mb-4">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>University of Rwanda • Department of Math & CS Education</span>
+          </div>
+
+          {/* Main Name & Titles */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 tracking-tight">
+            <span className="block text-white font-serif">
+              TUYIRINGIRE Pacifique
+            </span>
+            <span className="block text-xl sm:text-2xl text-slate-400 font-mono font-medium mt-1">
+              (Preferred: <span className="text-primary-400 font-bold">Paccy</span>)
+            </span>
+            <span className="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-cyan-300 to-purple-400 mt-2 font-serif font-bold">
+              Computer Science Educator & Software Developer
+            </span>
+          </h1>
+
+          {/* Alternative Tagline */}
+          <blockquote className="text-base sm:text-lg font-serif italic text-primary-300/90 mb-6 border-l-2 border-primary-500 pl-4 py-0.5">
+            "Transforming Learning Through Passion and Technology"
+          </blockquote>
+
+          {/* Core Identity Badges */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {CORE_IDENTITIES.map(id => (
+              <span 
+                key={id}
+                className="px-3 py-1 rounded-full text-xs font-bold bg-slate-800/80 text-slate-200 border border-slate-700/80 hover:border-primary-500/50 hover:text-primary-300 transition-colors"
+              >
+                {id}.
               </span>
-              <span className="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400 pb-2 mt-2">
-                Computer Science Educator & Software Developer
-              </span>
-            </h1>
-          </motion.div>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed font-medium"
-          >
-            I am a Computer Science Educator and Software Developer based in Rwanda. I combine my passion for teaching with modern web technologies to build scalable software solutions and advance Educational Technology.
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
+            ))}
+          </div>
+
+          {/* Short Introduction */}
+          <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-2xl leading-relaxed font-normal">
+            I am a Computer Science with Education student at the University of Rwanda, passionate about combining education, software development, and emerging technologies to create meaningful learning experiences. My goal is to become a professional Computer Science teacher and software developer who uses technology to solve real educational and community challenges.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-8">
             <a 
               href="#projects" 
-              className="group inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-white bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-600/30 transition-all hover:-translate-y-1 interactive"
+              className="group inline-flex items-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-white bg-gradient-to-r from-primary-600 to-cyan-600 hover:from-primary-500 hover:to-cyan-500 shadow-lg shadow-primary-500/25 transition-all hover:-translate-y-0.5"
             >
-              View My Projects
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              Explore Projects
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
             </a>
             <a 
-              href="#" 
-              className="inline-flex justify-center items-center px-8 py-4 border border-slate-200 dark:border-slate-700 text-base font-bold rounded-full text-slate-700 dark:text-slate-300 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md hover:bg-white dark:hover:bg-slate-800 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 interactive"
+              href="#teaching" 
+              className="inline-flex items-center px-6 sm:px-7 py-3.5 rounded-2xl text-sm font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-primary-500/40 transition-all hover:-translate-y-0.5"
             >
-              <Download className="mr-2" size={20} />
-              Download CV
+              <Laptop size={16} className="mr-2 text-primary-400" />
+              Teaching Practicum
             </a>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-12 flex items-center space-x-6 text-sm text-slate-500 font-medium"
-          >
-            <a href="https://github.com/tpaccy6-star" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors interactive">
-              <Github size={24} className="mr-2" />
+            <button 
+              onClick={() => setIsCVModalOpen(true)}
+              className="inline-flex items-center px-5 sm:px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-300 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700 hover:text-white transition-all hover:-translate-y-0.5"
+            >
+              <Download size={16} className="mr-2" />
+              Download CV
+            </button>
+          </div>
+
+          {/* Quick Contact & Social Handles */}
+          <div className="flex flex-wrap items-center gap-6 text-xs text-slate-400 font-medium">
+            <a 
+              href="https://github.com/tpaccy6-star" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center hover:text-primary-400 transition-colors"
+            >
+              <Github size={16} className="mr-1.5" />
               tpaccy6-star
             </a>
-            <a href="mailto:tpaccy6@gmail.com" className="flex items-center hover:text-primary-600 dark:hover:text-primary-400 transition-colors interactive">
+            <a 
+              href="mailto:tpaccy6@gmail.com" 
+              className="flex items-center hover:text-primary-400 transition-colors"
+            >
+              <Mail size={16} className="mr-1.5" />
               tpaccy6@gmail.com
             </a>
-          </motion.div>
+            <a 
+              href="https://wa.me/250781343621" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center hover:text-emerald-400 transition-colors"
+            >
+              <MessageCircle size={16} className="mr-1.5 text-emerald-400" />
+              +250 781 343 621
+            </a>
+          </div>
         </motion.div>
         
+        {/* Right Column (Portrait Card & Status) */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut", type: "spring", bounce: 0.4 }}
-          className="relative lg:ml-auto perspective-1000"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="lg:col-span-5 relative"
         >
-          <motion.div 
-            style={{ rotateX: blob2X, rotateY: blob1Y }}
-            className="aspect-[4/5] w-full max-w-md mx-auto rounded-[2rem] overflow-hidden relative shadow-2xl ring-1 ring-white/20 dark:ring-white/10 group transform-gpu"
-          >
+          <div className="relative aspect-[4/5] max-w-sm sm:max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-700/60 group">
             <img 
               src="/tuyiringire-pacifique-software-developer-rwanda.jpg" 
-              alt="TUYIRINGIRE Pacifique - Computer Science Educator and Software Developer in Rwanda" 
-              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-1000 ease-out"
+              alt="TUYIRINGIRE Pacifique (Paccy) - Computer Science Educator and Software Developer in Rwanda" 
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
             />
-            {/* Glass overlay at bottom of image */}
-            <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
             
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="glass-panel p-4 rounded-xl backdrop-blur-xl border-white/20">
-                <p className="text-white font-bold tracking-wide">Available for Work</p>
-                <div className="flex items-center mt-1 space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                  <p className="text-slate-300 text-xs font-medium uppercase tracking-wider">Open to opportunities</p>
+            {/* Status overlay bottom */}
+            <div className="absolute bottom-5 left-5 right-5">
+              <div className="p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-lg">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-white font-bold text-sm">Computer Science & EdTech</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Available</span>
+                  </div>
                 </div>
+                <p className="text-xs text-slate-300">
+                  Open to teaching opportunities, software engineering, EdTech ventures & research.
+                </p>
               </div>
             </div>
-          </motion.div>
-          
-          {/* Decorative floating elements */}
-          <motion.div 
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary-500/30 rounded-full blur-3xl -z-10"
-          ></motion.div>
-          <motion.div 
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-10 -right-10 w-48 h-48 bg-purple-500/30 rounded-full blur-3xl -z-10"
-          ></motion.div>
+          </div>
+
+          {/* Decorative blurred backgrounds */}
+          <div className="absolute -bottom-8 -left-8 w-44 h-44 bg-primary-500/20 rounded-full blur-3xl -z-10" />
+          <div className="absolute -top-8 -right-8 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl -z-10" />
         </motion.div>
+
       </div>
+
+      {/* Curriculum Vitae Modal */}
+      <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
     </section>
   );
 };

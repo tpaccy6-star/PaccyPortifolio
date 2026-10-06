@@ -2,27 +2,33 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TerminalSection } from './components/TerminalSection';
 import { About } from './components/About';
+import { Teaching } from './components/Teaching';
 import { Projects } from './components/Projects';
-import { Skills } from './components/Skills';
+import { ProblemsMatrix } from './components/ProblemsMatrix';
+import { ResearchInnovation } from './components/ResearchInnovation';
 import { Experience } from './components/Experience';
+import { Skills } from './components/Skills';
+import { LeadershipService } from './components/LeadershipService';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-primary-500/30 selection:text-primary-200">
       <CustomCursor />
       <Navbar />
       <main>
         <Hero />
         <TerminalSection />
         <About />
-        {/* Placeholder for Teaching section, merged into About / Experience for now based on components built */}
+        <Teaching />
         <Projects />
-        <Skills />
+        <ProblemsMatrix />
+        <ResearchInnovation />
         <Experience />
-        {/* Placeholder for Research / Insights */}
+        <Skills />
+        <LeadershipService />
         <Contact />
       </main>
       <Footer />
