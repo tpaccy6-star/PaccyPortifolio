@@ -79,16 +79,36 @@ export const Teaching = () => {
               <div className="glass-panel p-5 sm:p-8 md:p-10 rounded-3xl border border-primary-500/30 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-80 h-80 bg-primary-500/10 rounded-full blur-3xl pointer-events-none" />
                 
-                <div className="max-w-3xl">
-                  <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 inline-flex items-center gap-1.5 mb-4">
-                    <Sparkles size={12} /> Featured Practicum Case Study
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-serif mb-3">
-                    Teaching Computer Science with Limited Hardware
-                  </h3>
-                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
-                    During my teaching internship at <span className="text-white font-bold">{teachingPracticumCaseStudy.school}</span> in {teachingPracticumCaseStudy.location}, I navigated the real-world operational challenges facing ICT integration in a school of <span className="text-white font-semibold">{teachingPracticumCaseStudy.studentBody}</span>.
-                  </p>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-6">
+                  <div className="lg:col-span-8">
+                    <span className="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-primary-500/20 text-primary-300 border border-primary-500/30 inline-flex items-center gap-1.5 mb-4">
+                      <Sparkles size={12} /> Featured Practicum Case Study
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-serif mb-3">
+                      Teaching Computer Science with Limited Hardware
+                    </h3>
+                    <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-4">
+                      During my teaching internship at <span className="text-white font-bold">{teachingPracticumCaseStudy.school}</span> in {teachingPracticumCaseStudy.location}, I navigated the real-world operational challenges facing ICT integration in a school of <span className="text-white font-semibold">{teachingPracticumCaseStudy.studentBody}</span>.
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      Bridging the gap between conceptual algorithms and practical syntax required agile whiteboard scaffolding, rotating student stations, and offline-first problem solving.
+                    </p>
+                  </div>
+                  <div className="lg:col-span-4">
+                    <figure className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl group max-w-sm mx-auto">
+                      <img
+                        src="/tuyiringire-pacifique-classroom-educator-whiteboard.jpg"
+                        alt="TUYIRINGIRE Pacifique teaching Computer Science at GS MUHORORO whiteboard"
+                        width="600"
+                        height="800"
+                        loading="lazy"
+                        className="w-full h-64 sm:h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-900/80 to-transparent p-3 text-[11px] text-slate-200 font-medium">
+                        <span className="font-bold text-primary-300">Practicum in Action:</span> TUYIRINGIRE Pacifique teaching at whiteboard • GS MUHORORO
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
 
                 {/* The Laptop Reality Infographic */}

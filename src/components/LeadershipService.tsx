@@ -49,6 +49,44 @@ export const LeadershipService = () => {
           ))}
         </div>
 
+        {/* Leadership in Action Feature Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 max-w-6xl mx-auto mb-16 flex flex-col md:flex-row items-center gap-6 sm:gap-8 overflow-hidden"
+        >
+          <figure className="relative w-full md:w-56 h-64 sm:h-72 rounded-2xl overflow-hidden border border-slate-700/80 flex-shrink-0 shadow-2xl group max-w-xs mx-auto md:mx-0">
+            <img
+              src="/tuyiringire-pacifique-leadership-handover-portrait.png"
+              alt="TUYIRINGIRE Pacifique leadership handover portrait in Rwanda"
+              width="450"
+              height="600"
+              loading="lazy"
+              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-900/80 to-transparent p-2 text-[10px] text-slate-300 text-center font-mono">
+              Handover Ceremony • Student Union
+            </figcaption>
+          </figure>
+          <div className="flex-1 text-left">
+            <span className="text-xs font-mono font-bold text-primary-400 uppercase tracking-widest block mb-2">
+              Stewardship & Governance
+            </span>
+            <h4 className="text-2xl font-bold font-serif text-white mb-2">
+              Leading with Integrity, Vision & Service
+            </h4>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
+              From student governance representing academic peers at the University of Rwanda to leading youth biblical education at Christian Life Assembly (CLA) Remera, every leadership mandate is focused on mentorship, ethical accountability, and empowering others to thrive.
+            </p>
+            <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-400">
+              <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">University of Rwanda Student Union</span>
+              <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">CLA Remera Youth Leadership</span>
+              <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300">Mentorship & Public Speaking</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Faith & Service Banner & Communication */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           

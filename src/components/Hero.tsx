@@ -19,9 +19,41 @@ const ROTATING_ROLES = [
   "Technology-for-Learning Builder"
 ];
 
+const HERO_PORTRAITS = [
+  {
+    id: "developer",
+    label: "Developer",
+    role: "Software Developer & EdTech Builder",
+    src: "/tuyiringire-pacifique-software-developer-rwanda.jpg",
+    alt: "TUYIRINGIRE Pacifique (Paccy) - Computer Science Educator and Software Developer in Rwanda"
+  },
+  {
+    id: "educator",
+    label: "Educator",
+    role: "Computer Science Practicum Teacher",
+    src: "/tuyiringire-pacifique-classroom-educator-whiteboard.jpg",
+    alt: "TUYIRINGIRE Pacifique teaching Computer Science at GS MUHORORO whiteboard"
+  },
+  {
+    id: "leadership",
+    label: "Leadership",
+    role: "Student Governance & Community Lead",
+    src: "/tuyiringire-pacifique-leadership-handover-portrait.png",
+    alt: "TUYIRINGIRE Pacifique leadership handover portrait in Rwanda"
+  },
+  {
+    id: "formal",
+    label: "Formal",
+    role: "Academic & Civic Professional",
+    src: "/tuyiringire-pacifique-formal-blue-suit.jpg",
+    alt: "TUYIRINGIRE Pacifique formal portrait in blue suit"
+  }
+];
+
 export const Hero = () => {
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
+  const [activePortraitIndex, setActivePortraitIndex] = useState(0);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -242,27 +274,61 @@ export const Hero = () => {
 
           <div className="relative aspect-[4/5] max-w-sm sm:max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-700/60 group">
             <img 
-              src="/tuyiringire-pacifique-software-developer-rwanda.jpg" 
-              alt="TUYIRINGIRE Pacifique (Paccy) - Computer Science Educator and Software Developer in Rwanda" 
+              key={HERO_PORTRAITS[activePortraitIndex].id}
+              src={HERO_PORTRAITS[activePortraitIndex].src} 
+              alt={HERO_PORTRAITS[activePortraitIndex].alt} 
               className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
             
             {/* Status overlay bottom */}
-            <div className="absolute bottom-5 left-5 right-5">
-              <div className="p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-lg">
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="p-3.5 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 shadow-lg">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-white font-bold text-sm">Computer Science & EdTech</span>
+                  <span className="text-white font-bold text-xs sm:text-sm">
+                    {HERO_PORTRAITS[activePortraitIndex].role}
+                  </span>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Available</span>
+                    <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Available</span>
                   </div>
                 </div>
-                <p className="text-xs text-slate-300">
-                  Open to teaching opportunities, software engineering, EdTech ventures & research.
+                <p className="text-[11px] text-slate-300">
+                  Open to teaching opportunities, software engineering & EdTech ventures.
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Portrait Selector Thumbnails for Google/Bing Indexing & Visitor Exploration */}
+          <div className="mt-4 flex items-center justify-center gap-2 max-w-sm sm:max-w-md mx-auto">
+            {HERO_PORTRAITS.map((portrait, idx) => (
+              <button
+                key={portrait.id}
+                onClick={() => {
+                  playKeyClick();
+                  setActivePortraitIndex(idx);
+                }}
+                className={`group flex items-center gap-2 p-1.5 pr-2.5 rounded-xl border transition-all text-left ${
+                  activePortraitIndex === idx
+                    ? "bg-slate-800 border-primary-500 shadow-md shadow-primary-500/20 ring-1 ring-primary-500/50"
+                    : "bg-slate-900/80 border-slate-800 hover:border-slate-700 opacity-75 hover:opacity-100"
+                }`}
+                title={portrait.label}
+              >
+                <img
+                  src={portrait.src}
+                  alt={portrait.alt}
+                  width="36"
+                  height="36"
+                  loading="lazy"
+                  className="w-8 h-8 rounded-lg object-cover object-top border border-slate-700"
+                />
+                <span className="text-[11px] font-semibold text-slate-200 hidden sm:inline">
+                  {portrait.label}
+                </span>
+              </button>
+            ))}
           </div>
 
           {/* Decorative blurred backgrounds */}

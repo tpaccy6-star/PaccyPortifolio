@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# Ensure Googlebot-Image and Bing Image search engines have full access to index all photos
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
 Sitemap: https://paccyportifolio.vercel.app/sitemap.xml

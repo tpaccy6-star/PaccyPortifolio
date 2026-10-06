@@ -55,13 +55,37 @@ export const About = () => {
           align="center"
         />
 
-        {/* Narrative & Code Window Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-20">
+        {/* Narrative & Profile Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center max-w-6xl mx-auto mb-12">
+          {/* Portrait Photo Column */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-4 flex justify-center"
+          >
+            <figure className="relative w-full max-w-[280px] aspect-[3/4] rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl group">
+              <img
+                src="/tuyiringire-pacifique-formal-blue-suit.jpg"
+                alt="TUYIRINGIRE Pacifique formal portrait in blue suit"
+                width="480"
+                height="640"
+                loading="lazy"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <figcaption className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/95 via-slate-900/80 to-transparent p-3 text-[11px] text-slate-200 text-center font-medium">
+                <span className="font-bold text-primary-300">TUYIRINGIRE Pacifique</span>
+                <span className="block text-[10px] text-slate-400">Educator • Developer • Rwandan Youth Leader</span>
+              </figcaption>
+            </figure>
+          </motion.div>
+
+          {/* Narrative Column */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-5 text-slate-300 text-base sm:text-lg leading-relaxed"
+            className="lg:col-span-8 space-y-5 text-slate-300 text-base sm:text-lg leading-relaxed"
           >
             <p>
               I am <span className="text-white font-bold">TUYIRINGIRE Pacifique</span>, a Computer Science with Education student in the Department of Mathematics and Computer Science Education at the <span className="text-primary-300 font-semibold">University of Rwanda – College of Education</span>.
@@ -73,24 +97,25 @@ export const About = () => {
               Beyond the lecture hall, I actively build full-stack web and mobile applications, conduct empirical data research, facilitate classroom teaching practice, and participate in social entrepreneurship incubators.
             </p>
           </motion.div>
+        </div>
 
-          {/* Interactive Code Window */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-[#0c1017] font-mono text-xs sm:text-sm"
-          >
-            <div className="flex items-center px-4 py-3 bg-[#151b23] border-b border-slate-800">
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
-              <div className="flex-1 text-center text-xs text-slate-400">tuyiringire_pacifique.ts</div>
+        {/* Interactive Code Window */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-[#0c1017] font-mono text-xs sm:text-sm max-w-4xl mx-auto mb-20"
+        >
+          <div className="flex items-center px-4 py-3 bg-[#151b23] border-b border-slate-800">
+            <div className="flex space-x-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
             </div>
-            <div className="p-5 sm:p-6 text-slate-300 overflow-x-auto leading-relaxed">
-              <pre><code>
+            <div className="flex-1 text-center text-xs text-slate-400">tuyiringire_pacifique.ts</div>
+          </div>
+          <div className="p-5 sm:p-6 text-slate-300 overflow-x-auto leading-relaxed">
+            <pre><code>
 <span className="text-purple-400">interface</span> <span className="text-yellow-300">EducatorDeveloper</span> {'{'}
 <br/>  name: <span className="text-green-400">"TUYIRINGIRE Pacifique (Paccy)"</span>;
 <br/>  institution: <span className="text-green-400">"University of Rwanda"</span>;
@@ -105,10 +130,9 @@ export const About = () => {
 <br/>  pillars: [<span className="text-green-400">"Teach"</span>, <span className="text-green-400">"Build"</span>, <span className="text-green-400">"Research"</span>, <span className="text-green-400">"Lead"</span>],
 <br/>  <span className="text-blue-400">approach</span>: () =&gt; <span className="text-green-400">"Observe → Understand → Design → Build → Impact"</span>
 <br/>{'}'};
-              </code></pre>
-            </div>
-          </motion.div>
-        </div>
+            </code></pre>
+          </div>
+        </motion.div>
 
         {/* The "Why" Banner */}
         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-primary-500/30 max-w-5xl mx-auto mb-20 relative overflow-hidden">

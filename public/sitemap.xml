@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://paccyportifolio.vercel.app/</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Primary Professional Portrait -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-software-developer-rwanda.jpg</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Computer Science Educator and Software Developer in Rwanda</image:title>
+      <image:caption>Official professional portrait of TUYIRINGIRE Pacifique (Paccy), Computer Science with Education student at the University of Rwanda and software developer.</image:caption>
+    </image:image>
+
+    <!-- Classroom Educator Whiteboard Photo -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-classroom-educator-whiteboard.jpg</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Classroom Teaching and Computer Science Pedagogy</image:title>
+      <image:caption>TUYIRINGIRE Pacifique in the classroom during teaching practicum, delivering Competency-Based Curriculum (CBC) Computer Science and ICT instruction at GS MUHORORO.</image:caption>
+    </image:image>
+
+    <!-- Leadership & Handover Ceremony Portrait -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-leadership-handover-portrait.png</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Leadership, Servant Stewardship and Community Service</image:title>
+      <image:caption>TUYIRINGIRE Pacifique portrait during leadership handover ceremony, representing servant leadership, choir direction, and community service in Rwanda.</image:caption>
+    </image:image>
+
+    <!-- Formal Three-Piece Blue Suit Portrait -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-formal-blue-suit.jpg</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Professional Portrait in Three-Piece Suit</image:title>
+      <image:caption>Professional formal portrait of TUYIRINGIRE Pacifique (Paccy), software developer, EdTech builder, and Mastercard Foundation SEF 2.0 Fellow in Kigali, Rwanda.</image:caption>
+    </image:image>
+
+    <!-- Official Brand Logo -->
+    <image:image>
+      <image:loc>https://paccyportifolio.vercel.app/tuyiringire-pacifique-computer-science-educator-logo.png</image:loc>
+      <image:title>TUYIRINGIRE Pacifique - Official Brand Logo</image:title>
+      <image:caption>Official personal branding emblem for TUYIRINGIRE Pacifique, Computer Science Educator and Software Developer.</image:caption>
+    </image:image>
   </url>
 </urlset>
