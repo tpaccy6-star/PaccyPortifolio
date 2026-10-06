@@ -83,7 +83,7 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               <p className="text-xs text-slate-400 italic mt-0.5">"Transforming Learning Through Passion and Technology"</p>
 
               <div className="flex flex-wrap gap-4 text-xs text-slate-300 mt-4 pt-4 border-t border-slate-800">
-                <span className="flex items-center gap-1.5"><MapPin size={13} className="text-primary-400" /> Kigali / Rulindo, Rwanda</span>
+                <span className="flex items-center gap-1.5"><MapPin size={13} className="text-primary-400" /> Kigali / Musanze, Rwanda</span>
                 <span className="flex items-center gap-1.5"><Mail size={13} className="text-primary-400" /> tpaccy6@gmail.com</span>
                 <span className="flex items-center gap-1.5"><Phone size={13} className="text-primary-400" /> +250 781 343 621</span>
                 <span className="flex items-center gap-1.5"><Github size={13} className="text-primary-400" /> github.com/tpaccy6-star</span>
@@ -94,23 +94,37 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
             <div>
               <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-2">Professional Summary</h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Computer Science with Education student at the University of Rwanda with formal classroom teaching experience, full-stack software development expertise, and passion for educational technology. Experienced in Competency-Based Curriculum (CBC) delivery, resource-resilient pedagogy (teaching with 5–6 laptops per 18+ students), offline systems engineering (C# / WPF, PWA), and multi-role institutional web/mobile systems.
+                Computer Science with Education scholar at the University of Rwanda and Head of Developers at NexaStack with formal classroom teaching experience, engineering leadership, and educational technology expertise. Experienced in Competency-Based Curriculum (CBC) delivery, resource-resilient pedagogy (teaching cohorts through limited hardware rotations), offline systems engineering (C# / WPF, PWA), and full-stack institutional web/mobile platforms.
               </p>
             </div>
 
             {/* Education */}
             <div>
               <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-2">Education</h2>
-              <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-base font-bold text-white">Bachelor of Education – Computer Science with Education</h3>
-                  <span className="text-xs font-mono text-slate-400">Current</span>
+              <div className="space-y-3">
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-base font-bold text-white">Bachelor of Education – Computer Science with Education</h3>
+                    <span className="text-xs font-mono text-slate-400">Current</span>
+                  </div>
+                  <p className="text-sm text-primary-300">University of Rwanda – College of Education</p>
+                  <p className="text-xs text-slate-400 mt-1">Department of Mathematics & Computer Science Education</p>
+                  <p className="text-xs text-slate-300 mt-2">
+                    <span className="font-semibold text-slate-200">Key Coursework:</span> Computer Science Pedagogy, Operating Systems, Algorithm Design, Database Systems, Software Requirements (SRS), CBC Methodology, Educational Data Analytics.
+                  </p>
                 </div>
-                <p className="text-sm text-primary-300">University of Rwanda – College of Education</p>
-                <p className="text-xs text-slate-400 mt-1">Department of Mathematics & Computer Science Education</p>
-                <p className="text-xs text-slate-300 mt-2">
-                  <span className="font-semibold text-slate-200">Key Coursework:</span> Computer Science Pedagogy, Operating Systems, Algorithm Design, Database Systems, Software Requirements (SRS), CBC Methodology, Educational Data Analytics.
-                </p>
+
+                <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <div className="flex justify-between items-start">
+                    <h3 className="text-base font-bold text-white">Secondary School Leaving Certificate</h3>
+                    <span className="text-xs font-mono text-amber-300 font-bold">Full NESA Aggregates</span>
+                  </div>
+                  <p className="text-sm text-primary-300">GS KAMPANGA</p>
+                  <p className="text-xs text-slate-400 mt-1">Kinigi Sector, Musanze District, Northern Province, Rwanda</p>
+                  <p className="text-xs text-slate-300 mt-2">
+                    Graduated with top national distinction (Full NESA Aggregates) and immediately entrusted by the administration to teach secondary classes.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -147,9 +161,9 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
                     <h3 className="text-sm font-bold text-white">Secondary School Teacher (Interim Cover) — GS KAMPANGA</h3>
                     <span className="text-xs font-mono text-slate-400">2023 – 2024</span>
                   </div>
-                  <p className="text-xs text-slate-400 mb-1">Rulindo District, Northern Province, Rwanda</p>
+                  <p className="text-xs text-slate-400 mb-1">Kinigi Sector, Musanze District, Northern Province, Rwanda</p>
                   <p className="text-xs text-slate-300">
-                    Graduated secondary education with Full NESA Aggregates (top national score) and was hired to replace former teacher on maternity leave; delivered curriculum lessons, assessments, and student guidance.
+                    Graduated secondary education at GS KAMPANGA in Kinigi, Musanze, with Full NESA Aggregates (top national score) and was hired to replace former teacher on maternity leave; delivered curriculum lessons, assessments, and student guidance.
                   </p>
                 </div>
               </div>
@@ -190,8 +204,8 @@ export const CVModal: React.FC<CVModalProps> = ({ isOpen, onClose }) => {
               <div>
                 <h2 className="text-xs uppercase tracking-widest font-bold text-primary-400 mb-2">Leadership & Service</h2>
                 <p className="text-slate-300"><span className="text-white font-semibold">GBUR:</span> Active Member & Student Leader (Groupe Biblique Universitaire du Rwanda)</p>
-                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Horeb Family Choir:</span> Secretary (Archival & Logistics)</p>
-                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">UR Prayer Choir:</span> Choir Leader</p>
+                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Horeb Family Choir:</span> Secretary (Archival & Organizational Logistics)</p>
+                <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Community Outreach:</span> Nyagahandagaza Secondary School mentorship</p>
                 <p className="text-slate-300 mt-1"><span className="text-white font-semibold">Bootcamps:</span> Mastercard Foundation SEF 2.0 / HATANA Fellow</p>
               </div>
             </div>

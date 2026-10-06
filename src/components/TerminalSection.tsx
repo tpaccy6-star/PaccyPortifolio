@@ -164,9 +164,9 @@ export const TerminalSection = () => {
         output = (
           <div className="text-slate-300 text-xs sm:text-sm space-y-1">
             <p className="text-purple-300 font-bold">Leadership & Service:</p>
+            <p>&gt; GBUR: Active Member & Student Leader (Groupe Biblique Universitaire du Rwanda)</p>
             <p>&gt; Secretary: Horeb Family Choir (Administration & Logistics)</p>
-            <p>&gt; Choir Leader: University of Rwanda Prayer Choir</p>
-            <p>&gt; Community Outreach: Nyagahandagaza Secondary School visits & 50+ evangelism pairs</p>
+            <p>&gt; Community Outreach: Nyagahandagaza Secondary School visits & 50+ outreach pairs</p>
             <p>&gt; Foundation: Christian faith inspiring integrity, service, and empathy</p>
           </div>
         );

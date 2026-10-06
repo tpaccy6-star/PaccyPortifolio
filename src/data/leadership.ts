@@ -26,18 +26,6 @@ export const leadershipExperiences: LeadershipItem[] = [
     impact: "Maintained seamless operational clarity, structured communication, and disciplined organizational execution across extensive choir membership."
   },
   {
-    id: "lead-ur-prayer-choir",
-    role: "Choir Leader",
-    organization: "University of Rwanda Prayer Choir",
-    category: "Choir & Ministry",
-    responsibilities: [
-      "Guiding vocal direction, musical training, and spiritual mentorship for university student vocalists",
-      "Planning and executing musical services, campus worship gatherings, and outreach concerts",
-      "Fostering team cohesion, conflict resolution, and student leadership development"
-    ],
-    impact: "Built an uplifting, high-accountability environment developing young leaders and enriching university worship life."
-  },
-  {
     id: "lead-community-outreach",
     role: "Community & Campus Evangelism Coordinator",
     organization: "Student Ministry & Community Outreach",

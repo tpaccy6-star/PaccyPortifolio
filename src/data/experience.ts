@@ -61,16 +61,16 @@ export const experience: ExperienceItem[] = [
     id: "gs-kampanga-teacher",
     role: "Secondary School Teacher (Interim / Maternity Cover)",
     organization: "GS KAMPANGA",
-    location: "Rulindo, Northern Province, Rwanda",
+    location: "Kinigi Sector, Musanze District, Northern Province, Rwanda",
     period: "2023 – 2024",
     type: "Education & Teaching",
     description: [
-      "Graduated secondary school at GS KAMPANGA achieving Full NESA Aggregates (top national examination marks) and was immediately appointed by school administration to teach.",
+      "Graduated secondary school at GS KAMPANGA in Kinigi, Musanze District, achieving Full NESA Aggregates (top national examination marks) and was immediately appointed by school administration to teach.",
       "Hired to replace former secondary teacher who was on maternity leave, ensuring complete instructional continuity and high pedagogical rigor across classes.",
       "Delivered curriculum lessons, administered assessments, facilitated hands-on computational problem-solving, and provided guidance to secondary students.",
       "Demonstrated remarkable classroom management, instructional clarity, and community trust immediately after graduation."
     ],
-    highlights: ["Full NESA Aggregates", "Maternity Cover Appointment", "Classroom Leadership"]
+    highlights: ["Full NESA Aggregates", "Maternity Cover Appointment", "Kinigi, Musanze"]
   }
 ];
 
@@ -78,7 +78,7 @@ export const learningTimeline = [
   {
     year: "2023",
     title: "Secondary Teaching & Academic Excellence at GS KAMPANGA",
-    summary: "Graduated secondary school with Full NESA Aggregates and was appointed to teach at GS KAMPANGA as interim replacement for former teacher on maternity leave."
+    summary: "Graduated secondary school with Full NESA Aggregates and was appointed to teach at GS KAMPANGA (Kinigi, Musanze) as interim replacement for former teacher on maternity leave."
   },
   {
     year: "2024",

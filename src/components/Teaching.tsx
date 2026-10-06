@@ -225,9 +225,9 @@ export const Teaching = () => {
                 </div>
                 <div>
                   <span className="text-xs font-bold text-primary-400 uppercase tracking-wider">Academic Excellence & Immediate Appointment • 2023–2024</span>
-                  <h4 className="text-xl font-bold text-white font-serif mt-1">Secondary School Teacher — GS KAMPANGA</h4>
+                  <h4 className="text-xl font-bold text-white font-serif mt-1">Secondary School Teacher — GS KAMPANGA (Kinigi, Musanze)</h4>
                   <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-                    Having graduated secondary education at <span className="text-white font-bold">GS KAMPANGA</span> with <span className="text-primary-300 font-bold">Full NESA Aggregates</span> (highest possible national mark), I was immediately hired by the school administration to step in and replace my former teacher who was on maternity leave. This formative role gave me direct mastery over lesson structuring, classroom management, and secondary student assessment.
+                    Having graduated secondary education at <span className="text-white font-bold">GS KAMPANGA</span> in Kinigi, Musanze District, with <span className="text-primary-300 font-bold">Full NESA Aggregates</span> (highest possible national mark), I was immediately hired by the school administration to step in and replace my former teacher who was on maternity leave. This formative role gave me direct mastery over lesson structuring, classroom management, and secondary student assessment.
                   </p>
                 </div>
               </div>

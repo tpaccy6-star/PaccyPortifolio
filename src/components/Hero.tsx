@@ -116,7 +116,7 @@ export const Hero = () => {
         className="mb-6 inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-slate-300 shadow-md backdrop-blur-md"
       >
         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span className="text-emerald-400 font-bold">Kigali / Rulindo, Rwanda</span>
+        <span className="text-emerald-400 font-bold">Kigali / Musanze, Rwanda</span>
         <span className="text-slate-600 hidden sm:inline">•</span>
         <span className="text-slate-300 hidden sm:inline">University of Rwanda (College of Education)</span>
         <span className="text-slate-600 hidden md:inline">•</span>
