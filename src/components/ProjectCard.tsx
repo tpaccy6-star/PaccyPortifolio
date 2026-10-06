@@ -1,8 +1,8 @@
-import React from 'react';
 import type { Project } from '../data/types';
 import { ExternalLink, Github, Eye, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TiltCard } from './TiltCard';
+import { playKeyClick } from '../utils/audio';
 
 interface ProjectCardProps {
   project: Project;
@@ -10,6 +10,10 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelectProject }) => {
+  const handleSelect = () => {
+    playKeyClick();
+    onSelectProject?.(project);
+  };
   return (
     <TiltCard className="h-full">
       <motion.div 
@@ -21,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelectProje
         className="glass-panel rounded-2xl overflow-hidden group flex flex-col h-full hover:border-primary-400 dark:hover:border-primary-500 hover:shadow-2xl hover:shadow-primary-500/20 transition-all duration-500"
       >
         {/* Banner with status and category */}
-        <div className="relative aspect-video overflow-hidden bg-slate-900 cursor-pointer" onClick={() => onSelectProject?.(project)}>
+        <div className="relative aspect-video overflow-hidden bg-slate-900 cursor-pointer" onClick={handleSelect}>
           <img 
             src={project.image} 
             alt={`Screenshot of ${project.name} - Software project by TUYIRINGIRE Pacifique`} 
@@ -62,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelectProje
         <div className="p-6 flex flex-col flex-grow relative z-10">
           <div className="mb-2">
             <h3 
-              onClick={() => onSelectProject?.(project)}
+              onClick={handleSelect}
               className="text-xl sm:text-2xl font-bold font-serif text-white group-hover:text-primary-400 transition-colors cursor-pointer"
             >
               {project.name}
@@ -102,7 +106,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelectProje
             
             <div className="flex items-center justify-between text-xs font-semibold pt-1">
               <button 
-                onClick={() => onSelectProject?.(project)}
+                onClick={handleSelect}
                 className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center"
               >
                 Deep Dive Details &rarr;

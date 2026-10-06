@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { SectionHeader } from './SectionHeader';
 import { teachingPhilosophy, teachingPracticumCaseStudy } from '../data/teaching';
+import { LaptopFleetVisualizer } from './LaptopFleetVisualizer';
 import { BookOpen, Laptop, Users, Presentation, Lightbulb, CheckCircle2, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { playKeyClick } from '../utils/audio';
 
 export const Teaching = () => {
   const [activeTab, setActiveTab] = useState<"case-study" | "philosophy" | "lessons">("case-study");
@@ -19,7 +21,10 @@ export const Teaching = () => {
         {/* Tab Navigation */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           <button
-            onClick={() => setActiveTab("case-study")}
+            onClick={() => {
+              playKeyClick();
+              setActiveTab("case-study");
+            }}
             className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
               activeTab === "case-study"
                 ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
@@ -30,7 +35,10 @@ export const Teaching = () => {
             GS MUHORORO Practicum Case Study
           </button>
           <button
-            onClick={() => setActiveTab("philosophy")}
+            onClick={() => {
+              playKeyClick();
+              setActiveTab("philosophy");
+            }}
             className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
               activeTab === "philosophy"
                 ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
@@ -41,7 +49,10 @@ export const Teaching = () => {
             Teaching Philosophy & CBC Model
           </button>
           <button
-            onClick={() => setActiveTab("lessons")}
+            onClick={() => {
+              playKeyClick();
+              setActiveTab("lessons");
+            }}
             className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-sm font-bold transition-all ${
               activeTab === "lessons"
                 ? "bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg shadow-primary-500/25 scale-105"
@@ -113,6 +124,9 @@ export const Teaching = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Interactive Fleet & Classroom Ratio Simulator */}
+              <LaptopFleetVisualizer />
 
               {/* Pedagogy Strategy Matrix */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

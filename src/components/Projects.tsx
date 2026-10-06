@@ -6,6 +6,7 @@ import { projects } from '../data/projects';
 import type { Project } from '../data/types';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Layers, Smartphone } from 'lucide-react';
+import { playKeyClick } from '../utils/audio';
 
 const TABS = [
   { id: "featured", label: "Featured Systems", icon: Sparkles },
@@ -65,6 +66,7 @@ export const Projects = () => {
               <button
                 key={tab.id}
                 onClick={() => {
+                  playKeyClick();
                   setActiveTab(tab.id as any);
                   setFilterCategory("All");
                 }}
@@ -91,7 +93,10 @@ export const Projects = () => {
             {CATEGORIES.map(category => (
               <button
                 key={category}
-                onClick={() => setFilterCategory(category)}
+                onClick={() => {
+                  playKeyClick();
+                  setFilterCategory(category);
+                }}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   filterCategory === category
                     ? 'bg-primary-500 text-white shadow-md'

@@ -1,6 +1,9 @@
 import React from 'react';
 import type { Project } from '../data/types';
-import { X, ExternalLink, Github, Award, CheckCircle2, AlertTriangle, Lightbulb, Layers } from 'lucide-react';
+import { CertificateStudio } from './CertificateStudio';
+import { TimetableSolverDemo } from './TimetableSolverDemo';
+import { QuizMasterConsole } from './QuizMasterConsole';
+import { X, ExternalLink, Github, CheckCircle2, AlertTriangle, Lightbulb, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProjectDetailModalProps {
@@ -9,8 +12,6 @@ interface ProjectDetailModalProps {
 }
 
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project, onClose }) => {
-  const [showCertificate, setShowCertificate] = React.useState(false);
-
   if (!project) return null;
 
   return (
@@ -97,49 +98,27 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                     <ExternalLink size={16} className="mr-2" /> Live Demo
                   </a>
                 )}
-                {project.certificatePreview && (
-                  <button
-                    onClick={() => setShowCertificate(!showCertificate)}
-                    className="inline-flex items-center px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-sm font-medium text-white transition-colors"
-                  >
-                    <Award size={16} className="mr-2" /> {showCertificate ? "Hide Certificate" : "Certificate Preview"}
-                  </button>
-                )}
               </div>
             </div>
           </div>
 
-          {/* Interactive Certificate Preview for FluentEdge */}
-          {showCertificate && project.certificatePreview && (
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border-4 border-amber-300 text-slate-900 shadow-xl relative overflow-hidden"
-            >
-              <div className="absolute top-3 right-4 text-xs font-mono font-bold text-amber-700 bg-amber-200/60 px-2 py-1 rounded">
-                SIMULATED CERTIFICATE
-              </div>
-              <div className="text-center max-w-xl mx-auto space-y-3">
-                <div className="inline-flex p-3 rounded-full bg-amber-100 text-amber-700 mb-1">
-                  <Award size={36} />
-                </div>
-                <h4 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-serif text-slate-900">
-                  FluentEdge Academy
-                </h4>
-                <p className="text-xs tracking-widest font-bold text-amber-800 uppercase">
-                  Certificate of Completion • CEFR English Proficiency Award
-                </p>
-                <div className="py-2 border-y border-amber-200">
-                  <p className="text-sm text-slate-600">This certifies that the recipient has successfully completed</p>
-                  <p className="text-xl font-bold text-slate-900 mt-1">PROFESSIONAL ENGLISH 1 (A1)</p>
-                  <p className="text-sm font-semibold text-emerald-700 mt-1">Final Grade: 100% — Mastered</p>
-                </div>
-                <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 pt-2 font-mono">
-                  <span>Instructor: TUYIRINGIRE Pacifique</span>
-                  <span className="font-bold text-slate-700">Verification Code: FEA-A1-2026-9842</span>
-                </div>
-              </div>
-            </motion.div>
+          {/* Interactive Project Sandboxes */}
+          {project.id === 'fluentedge-academy' && (
+            <div className="mb-8">
+              <CertificateStudio />
+            </div>
+          )}
+
+          {project.id === 'hli-timetable-system' && (
+            <div className="mb-8">
+              <TimetableSolverDemo />
+            </div>
+          )}
+
+          {project.id === 'quizmaster-v2' && (
+            <div className="mb-8">
+              <QuizMasterConsole />
+            </div>
           )}
 
           {/* Problem & Solution Grid */}

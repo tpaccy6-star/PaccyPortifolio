@@ -16,6 +16,7 @@ import {
   Target
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { playKeyClick } from '../utils/audio';
 
 const iconMap: Record<string, any> = {
   Laptop,
@@ -86,7 +87,10 @@ export const ProblemsMatrix = () => {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => {
+                playKeyClick();
+                setSelectedCategory(cat);
+              }}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
                 selectedCategory === cat
                   ? "bg-primary-500 text-white shadow-md shadow-primary-500/30 scale-105"
